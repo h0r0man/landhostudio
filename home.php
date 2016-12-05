@@ -37,7 +37,7 @@
 
                 <div class="featured__slide-video">
                   <video preload="none" loop muted<?php if ($image): ?> poster="<?php echo $thumbLarge; ?>"<?php endif; ?>>
-                    <source src="<?php the_field('options_carousel_video', option); ?>" type="video/mp4">
+                    <source src="<?php the_sub_field('options_carousel_video', option); ?>" type="video/mp4">
                   </video>
                 </div>
 
