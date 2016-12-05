@@ -1,0 +1,48 @@
+html
+  font-size: 1rem
+  -webkit-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
+
+body, input, textarea, select, button
+  font-family: $font-family
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  -moz-font-feature-settings: 'liga', 'kern'
+
+body
+  font-size: 100%
+  line-height: $line-height
+  font-weight: normal
+
+h1, h2, h3, h4, h5, h6
+  line-height: $line-height
+  font-weight: bold
+  margin: 0
+
+hr
+  // Add the correct box sizing in Firefox
+  box-sizing: content-box
+  height: 0
+
+  // Show the overflow in Edge and IE
+  overflow: visible
+
+a
+  color: $color-2
+  text-decoration: none
+
+  // Remove the gray background on active links in IE 10.
+  background-color: transparent
+
+  // Remove gaps in links underline in iOS 8+ and Safari 8+
+  -webkit-text-decoration-skip: objects
+
+  &:active,
+  &:hover
+    // Remove the outline on focused links when they are also active or hovered
+    outline-width: 0
+
+  &:focus,
+  &:hover
+    // TODO
