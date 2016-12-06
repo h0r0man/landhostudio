@@ -1,4 +1,4 @@
-<article class="content single">
+<article class="single">
 
   <?php
     $thumbPost = has_post_thumbnail();
@@ -6,28 +6,32 @@
   ?>
   
   <?php if ($thumbPost || get_field('work_video_embed')): ?>
-    <div class="hero">
-      <?php if ($thumbPost && get_field('work_video_embed')): ?>
+    <div class="single__hero">
+      <div class="single__hero-container">
 
-        <div class="play">
-          <a href="#">Play video</a>
-        </div>
+        <?php if ($thumbPost && get_field('work_video_embed')): ?>
+
+          <div class="single__hero-play">
+            <button><?php esc_html_e('Play', 'horoman'); ?></button>
+          </div>
+          
+          <div class="single__hero-image">
+            <img src="<?php echo $thumbLargeDefault[0]; ?>" alt="<?php echo $thumbLargeDefault['alt'] ?>" />
+          </div>
+          
+          <div class="single__hero-iframe">
+            <?php the_field('work_video_embed'); ?>
+          </div>
+
+        <?php elseif ($thumbPost): ?>
         
-        <div class="image">
-          <img src="<?php echo $thumbLargeDefault[0]; ?>" alt="<?php echo $thumbLargeDefault['alt'] ?>" />
-        </div>
-        
-        <div class="iframe">
-          <?php the_field('work_video_embed'); ?>
-        </div>
+          <div class="single__hero-image">
+            <img src="<?php echo $thumbLargeDefault[0]; ?>" alt="<?php echo $thumbLargeDefault['alt'] ?>" />
+          </div>
 
-      <?php elseif ($thumbPost): ?>
-      
-        <div class="image">
-          <img src="<?php echo $thumbLargeDefault[0]; ?>" alt="<?php echo $thumbLargeDefault['alt'] ?>" />
-        </div>
+        <?php endif; ?>
 
-      <?php endif; ?>
+      </div>
     </div>
   <?php endif; ?>
 

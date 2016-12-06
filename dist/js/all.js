@@ -20928,6 +20928,7 @@ $(function() {
     initGrid();
     initGridVideo();
     initGridContent();
+    initSingleHero();
   };
 
   function initHeader() {
@@ -21045,6 +21046,26 @@ $(function() {
 
     };
     
+  };
+
+  function initSingleHero() {
+
+    $('.single__hero-play button').click(function (event) {
+      event.preventDefault();
+      $('.single__hero').addClass('single__hero--playing');
+      $('.single__hero-iframe iframe').vimeo('play');
+      return false;
+    });
+
+    $('.single__hero-iframe iframe').on('pause', function() {
+      $('.single__hero').removeClass('single__hero--playing');
+      $(this).vimeo('seekTo', 0);
+    });
+
+    $('.single__hero-iframe iframe').on('finish', function() {
+      $('.single__hero').removeClass('single__hero--playing');
+    });
+
   };
 
   init();
