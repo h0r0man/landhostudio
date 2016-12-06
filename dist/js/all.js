@@ -20952,6 +20952,7 @@ $(function() {
     var $carousel = $('.featured__slides').flickity({
       contain: false,
       autoPlay: 7500,
+      pauseAutoPlayOnHover: false,
       percentPosition: true,
       prevNextButtons: false,
       pageDots: false,
