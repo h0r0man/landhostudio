@@ -58,18 +58,22 @@
       </section>
     <?php endif; ?>
 
-    <section class="grid">
+    <section class="grid row">
 
-      <h2><?php esc_html_e('Work', 'horoman'); ?></h2>
+      <h2 class="hidden"><?php esc_html_e('Work', 'horoman'); ?></h2>
+        
+      <?php if (have_posts()): ?>
 
-      <!-- gutter -->
-      <!-- sizer -->
+        <div class="grid__items">
 
-  		<?php if (have_posts()): ?>
+          <div class="grid__sizer"></div>
+          <div class="grid__gutter"></div>
 
-  			<?php while (have_posts()): the_post(); ?>
-  				<?php get_template_part('template-parts/content', 'preview'); ?>
-  			<?php endwhile; ?>
+    			<?php while (have_posts()): the_post(); ?>
+    				<?php get_template_part('template-parts/content', 'preview'); ?>
+    			<?php endwhile; ?>
+
+        </div>
 
   		<?php else: ?>
 
