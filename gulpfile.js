@@ -63,7 +63,7 @@ gulp.task('css', function() {
 gulp.task('js', function() {
   return gulp.src(source + '/scripts/all.js')
     .pipe(include())
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(gulp.dest(destination + '/js'))
     .pipe(browserSync.stream());
 });
