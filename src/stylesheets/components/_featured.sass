@@ -29,6 +29,10 @@
       max-height: 100%
       transform: translate(-50%,-50%)
     
+    video
+      @include media(max-width $to-small)
+        display: none
+    
     &--video
       // when item has a video
 
@@ -59,9 +63,13 @@
 
     &-image
       z-index: 2
-      opacity: 1
-      transition: opacity 500ms ease-in-out
-      .featured__slide--video-play &
-        opacity: 0
+
+      @include media($from-small)
+        opacity: 1
+        transition: opacity 500ms ease-in-out
+
+        .featured__slide--video-play &
+          opacity: 0
+
     &-video
       z-index: 1
