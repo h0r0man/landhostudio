@@ -1,8 +1,9 @@
 .featured
+  margin-bottom: ($grid-gutter * 2)
 
   @include media($from-small)
     width: #{100% - ($gutter * 2)}
-    margin: auto
+    margin: 0 auto ($grid-gutter * 0.75)
   
   &__slides
     position: relative

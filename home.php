@@ -58,7 +58,7 @@
       </section>
     <?php endif; ?>
 
-    <section class="grid row">
+    <section class="grid grid--three">
 
       <h2 class="hidden"><?php esc_html_e('Work', 'horoman'); ?></h2>
         
