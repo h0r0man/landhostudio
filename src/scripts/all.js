@@ -46,13 +46,21 @@ $(function() {
     }).flickity('select', 0); // selecting first items will help to fire settle event when flickity is runned;
         
     $carousel.on('settle.flickity', function () {
-
-      console.log('on settle!'); // good for use when slide is fired
-
+      
       var flkty = $carousel.data('flickity'); // access properties
-    
+      
       if ($(flkty.selectedElement).hasClass('featured__slide--video')) {
-        console.log('This slide has video!');
+        
+        $(flkty.selectedElement).find('video').get(0).currentTime = 0;
+        $(flkty.selectedElement).find('video').get(0).play();
+        $(flkty.selectedElement).addClass('featured__slide--video-play');
+      
+      }
+      
+      if (!$(flkty.selectedElement).hasClass('featured__slide--video')) {
+
+        $('.featured__slide').removeClass('featured__slide--video-play');
+
       }
     
     });

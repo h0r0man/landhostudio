@@ -58,6 +58,10 @@
         border-bottom: rem-calc(1) solid
 
     &-image
-      z-index: 1
-    &-video
       z-index: 2
+      opacity: 1
+      transition: opacity 500ms ease-in-out
+      .featured__slide--video-play &
+        opacity: 0
+    &-video
+      z-index: 1
