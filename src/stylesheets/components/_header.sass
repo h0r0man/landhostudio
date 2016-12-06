@@ -7,9 +7,11 @@ body
   top: 0
   left: 0
   width: 100%
-  height: rem-calc(55)
+  height: rem-calc(60)
+  padding: em-calc(20) 0
   background-color: $color-1
   z-index: 97
+  box-shadow: 0 0 8px 0 rgba($color-2, 0.25)
 
   &.header--menu
     @include media(max-width $to-small)
@@ -19,10 +21,23 @@ body
   ~ *
     margin-top: rem-calc(55)
 
+
+  // globals
+  
+  *
+    line-height: 1.2
+    font-size: 1em
+  
+  a, button
+    display: inline-block
+    border-bottom: rem-calc(1) solid
+    transition: border 150ms
+    &:hover
+      border-color: transparent
+
   &__item
     position: absolute
     width: calc((#{$gutter}*2) - #{em-calc(16)})
-    padding: em-calc(16) 0
 
     @include media($from-small)
       width: $gutter
@@ -34,9 +49,6 @@ body
       @include media($from-small)
         display: block
         left: 0
-
-        button
-          border-bottom: rem-calc(1) solid
 
       .state-1
         display: inline
@@ -58,26 +70,32 @@ body
       // Fixed if head is too long
       white-space: nowrap
       overflow: hidden
+      
+      display: flex
+      justify-content: space-between
 
       @include media($from-small)
         left: $gutter
         width: (100% - ($gutter * 2))
 
       &-logo
-        display: inline
-        font-size: 1em
-        margin: 0
-        float: left
+        
 
       &-description
         display: none
 
         @include media($from-small)
-          display: inline
+          display: block
           margin-left: em-calc(8)
-          font-size: 1em
-          margin: 0
-          float: right
+
+          h2, span
+            display: inline
+          span:not(:empty)
+            margin-left: em-calc(8)
+            
+
+      a
+        border: 0
 
     &--hello
       display: none
@@ -88,6 +106,13 @@ body
       
       a
         border-bottom: rem-calc(1) solid
+
+        @include media($from-small)
+          transition: border 150ms
+
+          &:focus,
+          &:hover
+            border-color: transparent
 
     &--menu
       right: em-calc(16)
@@ -110,17 +135,15 @@ body
         .header--menu &
           display: inline
 
-      a
-        border-bottom: 1px solid
-
   &__menus
     display: none
     
     @include media($from-small)
-      position: fixed
+      position: absolute
+      top: 0
       left: $gutter
       width: (100% - ($gutter * 2))
-      padding: em-calc(16) 0
+      padding: em-calc(20) 0
       background-color: $color-1
       z-index: 98
     
@@ -142,12 +165,14 @@ body
 
     li
       display: inline
+
       &.current-cat
         a
           border-bottom: rem-calc(1) solid
+          &:hover
+            border-color: transparent
 
     a
-      display: inline-block
       border-bottom: rem-calc(1) solid transparent
 
       @include media(max-width $to-small)
@@ -158,7 +183,6 @@ body
       @include media($from-small)
         margin-right: em-calc(24)
 
-      &:focus,
       &:hover
         border-bottom: rem-calc(1) solid
 

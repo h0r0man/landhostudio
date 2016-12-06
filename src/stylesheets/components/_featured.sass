@@ -1,4 +1,8 @@
 .featured
+
+  @include media($from-small)
+    width: #{100% - ($gutter * 2)}
+    margin: auto
   
   &__slides
     position: relative
@@ -58,8 +62,15 @@
         color: $color-1
         width: 100%
       
+      h2
+        font-size: em-calc(32)
+
+        @include media($from-small)
+          font-size: em-calc(48)
+      
       a
-        border-bottom: rem-calc(1) solid
+        padding-bottom: em-calc(1)
+        border-bottom: rem-calc(3) solid
 
     &-image
       z-index: 2

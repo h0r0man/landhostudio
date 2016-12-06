@@ -24,15 +24,18 @@
       </div>
       
       <div class="header__item header__item--head">
-        <h1 class="header__item--head-logo">
-          <a rel="home" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
-        </h1>
-        <?php
-          $description = get_bloginfo('description');
-  			  if ($description):
-        ?>
-  				<p class="header__item--head-description"><?php echo $description; ?></p>
-  			<?php endif; ?>
+
+        <div class="header__item--head-logo">
+          <h1>
+            <a rel="home" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+          </h1>
+        </div>
+
+        <div class="header__item--head-description">
+          <h2><?php echo get_bloginfo('description'); ?></h2>
+          <span></span>
+        </div>
+
       </div>
 
       <?php
