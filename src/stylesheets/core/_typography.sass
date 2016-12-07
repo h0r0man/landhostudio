@@ -11,9 +11,12 @@ body, input, textarea, select, button
   -moz-font-feature-settings: 'liga', 'kern'
 
 body
-  font-size: 100%
+  font-size: 87.5%
   line-height: $line-height
   font-weight: normal
+
+  @include media($from-huge)
+    font-size: 100%
 
 h1, h2, h3, h4, h5, h6
   line-height: $line-height
