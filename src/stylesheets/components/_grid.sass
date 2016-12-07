@@ -58,9 +58,15 @@
           padding-bottom: $grid-medium-height
 
     &--large
-      @include media($from-small)
-        width: $grid-large-width
-        padding-bottom: $grid-large-height
+
+      .grid--two &
+        width: 100%
+        padding-bottom: per-width(16,9)
+
+      .grid--three &
+        @include media($from-small)
+          width: $grid-large-width
+          padding-bottom: $grid-large-height
 
     // Interns -----------------------------------------------------------------
 
