@@ -35,55 +35,52 @@
     </div>
   <?php endif; ?>
 
-  <div class="column column--small">
+  <div class="single__content">
 
-    <div class="title">
+    <div class="single__content-header">
       <h2><?php the_title(); ?></h2>
+      <?php the_excerpt(); ?>
     </div>
 
-    <?php if (get_the_excerpt()): ?>
-      <div class="excerpt">
-        <?php the_excerpt(); ?>
-      </div>
-    <?php endif; ?>
-
-    <?php if (get_field('work_content_1')): ?>
-      <div class="content-1">
-        <?php the_field('work_content_1'); ?>
-      </div>
-    <?php endif; ?>
-
-  </div>
-
-  <div class="column column--medium">
-
-    <?php if (get_field('work_technical')): ?>
-      <div class="content-technical">
+    <div class="single__content-body">
+      <?php if (get_field('work_technical')): ?>
         <p><?php the_field('work_technical'); ?></p>
-      </div>
-    <?php endif; ?>
+      <?php endif; ?>
+      <p>
+        <a href="#more" class="single__content-body-more">
+          <span class="stage-1">Read more</span>
+          <span class="stage-2">Read less</span>
+        </a>
+      </p>
+    </div>
 
-    <a href="#">Read more</a>
+    <div class="single__content-nav">
 
-    <?php if (get_field('work_content_2')): ?>
-      <div class="content-2">
-        <?php the_field('work_content_2'); ?>
-      </div>
-    <?php endif; ?>
-
-  </div>
-  
-  <div class="column column--medium">
-
-    <?php if (get_previous_post_link() || get_next_post_link()): ?>
-      <p><?php if (get_next_post_link()): ?><?php next_post_link('%link', '%title'); ?><?php endif; ?><?php if (get_previous_post_link() && get_next_post_link()): ?> / <?php endif; ?><?php if (get_previous_post_link()): ?><?php previous_post_link('%link', '%title'); ?><?php endif; ?></p>
-    <?php endif; ?>
-    
-    <?php if (get_field('work_pages')): ?>
-      <div class="content-pages">
+      <?php if (get_previous_post_link() || get_next_post_link()): ?>
+        <p><?php if (get_next_post_link()): ?><?php next_post_link('%link', 'Next'); ?><?php endif; ?><?php if (get_previous_post_link() && get_next_post_link()): ?> / <?php endif; ?><?php if (get_previous_post_link()): ?><?php previous_post_link('%link', 'Previous'); ?><?php endif; ?></p>
+      <?php endif; ?>
+      
+      <?php if (get_field('work_pages')): ?>
         <p><?php the_field('work_pages'); ?></p>
-      </div>
-    <?php endif; ?>
+      <?php endif; ?>
+
+    </div>
+
+    <div class="single__content-more" id="more">
+  
+      <?php if (get_field('work_content_1')): ?>
+        <div class="single__content-more-1">
+          <?php the_field('work_content_1'); ?>
+        </div>
+      <?php endif; ?>
+
+      <?php if (get_field('work_content_2')): ?>
+        <div class="single__content-more-2">
+          <?php the_field('work_content_2'); ?>
+        </div>
+      <?php endif; ?>
+
+    </div>
 
   </div>
 

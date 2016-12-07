@@ -20929,6 +20929,7 @@ $(function() {
     initGridVideo();
     initGridContent();
     initSingleHero();
+    initSingleContent();
   };
 
   function initHeader() {
@@ -21064,6 +21065,16 @@ $(function() {
 
     $('.single__hero-iframe iframe').on('finish', function() {
       $('.single__hero').removeClass('single__hero--playing');
+    });
+
+  };
+
+  function initSingleContent() {
+
+    $('.single__content-body-more').click(function (event) {
+      event.preventDefault();
+      $('.single__content').toggleClass('single__content--opened');
+      return false;
     });
 
   };

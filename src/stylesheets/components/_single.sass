@@ -1,5 +1,7 @@
 .single
   
+  // Hero ----------------------------------------------------------------------
+
   &__hero
     @include media($from-small)
       width: #{100% - ($gutter * 2)}
@@ -70,3 +72,107 @@
       .single__hero--playing &
         z-index: 2
         opacity: 1
+
+  // Content -------------------------------------------------------------------
+
+  &__content
+    margin-top: em-calc(32)
+    margin-bottom: em-calc(32)
+
+    @include media(max-width $to-small)
+      display: flex
+      flex-wrap: wrap
+      margin-left: em-calc(16)
+      margin-right: em-calc(16)
+
+    @include media($from-small)
+      display: flex
+      flex-wrap: wrap
+      width: calc(#{100% - ($gutter * 2)} + #{em-calc(16)})
+      margin: em-calc(48) auto
+
+    &-header
+      @include media(max-width $to-small)
+        order: 1
+        width: 50%
+
+      @include media($from-small)
+        width: (100% / 3)
+        padding-left: em-calc(8)
+        padding-right: em-calc(8)
+
+      h2
+        font-weight: bold
+        font-size: em-calc(16)
+      p
+        margin: 0
+
+    &-body
+      @include media(max-width $to-small)
+        order: 3
+        width: 100%
+        margin-top: em-calc(16)
+      
+      @include media($from-small)
+        width: (100% / 3)
+        padding-left: em-calc(8)
+        padding-right: em-calc(8)
+      
+      p
+        margin: 0
+        
+      a
+        border-bottom: rem-calc(1) solid
+        
+      .stage-1
+        display: inline
+        .single__content--opened &
+          display: none
+      .stage-2
+        display: none
+        .single__content--opened &
+          display: inline
+
+    &-nav
+      text-align: right
+
+      @include media(max-width $to-small)
+        order: 2
+        width: (100% / 2)
+
+      @include media($from-small)
+        width: (100% / 3)
+        padding-left: em-calc(8)
+        padding-right: em-calc(8)
+
+      p
+        margin: 0
+
+    &-more
+      height: 0
+      overflow: hidden
+      opacity: 0
+      transition: opacity 500ms ease-in-out
+  
+      @include media(max-width $to-small)
+        order: 4
+      @include media($from-small)
+        display: flex
+        flex-wrap: wrap
+
+      .single__content--opened &
+        height: auto
+        opacity: 1
+
+      &-1,
+      &-2
+        @include media(max-width $to-small)
+          width: 100%
+
+        @include media($from-small)
+          width: (100% / 3)
+          padding-left: em-calc(8)
+          padding-right: em-calc(8)
+
+      &-1
+      &-2
