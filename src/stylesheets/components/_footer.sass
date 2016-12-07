@@ -1,0 +1,17 @@
+.footer
+  margin-top: em-calc(32)
+  font-size: em-calc(14)
+
+  .no-scroll &
+    position: fixed
+    bottom: 0
+    z-index: 99
+    color: $color-1
+
+  @include media(max-width $to-small)
+    padding-left: em-calc(16)
+    padding-right: em-calc(16)
+
+  @include media($from-small)
+    width: #{100% - ($gutter * 2)}
+    margin: em-calc(48) auto 0

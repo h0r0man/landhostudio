@@ -85,34 +85,60 @@
   </div>
 
   <?php if(have_rows('work_gallery')): ?>
-    <div class="gallery">
+    <div class="grid grid--two">
 
-      <?php while (have_rows('work_gallery')) : the_row(); ?>
-      
-      
-        <div class="item<?php if(get_sub_field('work_gallery_size') == 'medium'): ?> column--medium<?php elseif(get_sub_field('work_gallery_size') == 'large'): ?> column--large<?php endif; ?>">
+      <div class="grid__items">
 
+        <div class="grid__sizer"></div>
+        <div class="grid__gutter"></div>
+
+        <?php while (have_rows('work_gallery')) : the_row(); ?>
+        
           <?php
+            
+            $gallerySize = get_sub_field('work_gallery_size');
+            $galleryVideo = get_sub_field('work_gallery_video');
+            $galleryVideoAutoplay = get_sub_field('work_gallery_video_autoplay');
+            $galleryVideoAudio = get_sub_field('work_gallery_video_audio');
+
             $image = get_sub_field('work_gallery_image');
             $size = 'large';
             $thumbLarge = $image['sizes'][ $size ];
-            if ($image):
+            
+            // without link
+            
+            // Case 1. content
+            // Case 2. image
+            // Case 3. video
+            
+            
+            
           ?>
-            <div class="image">
-              <img src="<?php echo $thumbLarge ?>" alt="<?php echo $image['alt'] ?>" />
-            </div>
-          <?php endif; ?>
 
-          <?php if ($image && get_sub_field('work_gallery_video')): ?>
-            <div class="video">
-              <video preload="none" loop<?php if (get_sub_field('work_gallery_video_autoplay')): ?> autoplay<?php endif; ?><?php if (!get_sub_field('work_gallery_video_audio')): ?> muted<?php endif; ?> poster="<?php echo $thumbLarge ?>">
-                <source src="<?php the_sub_field('work_gallery_video'); ?>" type="video/mp4">
-              </video>
-            </div>
-          <?php endif; ?>
+          <div class="grid__item<?php if($gallerySize == 'medium'): ?> grid__item--medium<?php elseif($gallerySize == 'large'): ?> grid__item--large<?php endif; ?><?php if ($image && $galleryVideo): ?> grid__item--video<?php elseif ($image): ?> grid__item--image<?php endif; ?>">
 
-        </div>
-      <?php endwhile; ?>
+            <div class="grid__item-link">
+
+              <?php if ($image): ?>
+                <div class="grid__item-image">
+                  <img src="<?php echo $thumbLarge ?>" alt="<?php echo $image['alt'] ?>" />
+                </div>
+              <?php endif; ?>
+
+              <?php if ($image && $galleryVideo): ?>
+                <div class="grid__item-video">
+                  <video preload="none" loop<?php if ($galleryVideoAutoplay): ?> autoplay<?php endif; ?><?php if (!$galleryVideoAudio): ?> muted<?php endif; ?> poster="<?php echo $thumbLarge ?>">
+                    <source src="<?php the_sub_field('work_gallery_video'); ?>" type="video/mp4">
+                  </video>
+                </div>
+              <?php endif; ?>
+
+            </div>
+
+          </div>
+        <?php endwhile; ?>
+
+      </div>
 
     </div>
   <?php endif; ?>
