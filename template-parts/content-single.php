@@ -62,6 +62,8 @@
       
       <?php if (get_field('work_pages')): ?>
         <p><?php the_field('work_pages'); ?></p>
+      <?php else: ?>
+        <p><?php esc_html_e('See you next time', 'horoman'); ?></p>
       <?php endif; ?>
 
     </div>
