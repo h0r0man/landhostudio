@@ -109,7 +109,7 @@ gulp.task('fonts', function() {
 
 gulp.task('watch', function() {
   browserSync.init({
-    files: ['{lib,templates,parts}/**/*.php', '*.php'],
+    files: ['{template-pages,templates-parts}/**/*.php', '*.php'],
     proxy: 'http://landhostudio:8888/',
     notify: false,
     port: 2016,
