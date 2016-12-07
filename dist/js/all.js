@@ -20930,6 +20930,7 @@ $(function() {
     initGridContent();
     initSingleHero();
     initSingleContent();
+    initTestimonials();
   };
 
   function initHeader() {
@@ -21075,6 +21076,22 @@ $(function() {
       event.preventDefault();
       $('.single__content').toggleClass('single__content--opened');
       return false;
+    });
+
+  };
+
+  function initTestimonials() {
+
+    var $carousel2 = $('.testimonials__slides').flickity({
+      contain: false,
+      autoPlay: 7500,
+      pauseAutoPlayOnHover: false,
+      percentPosition: true,
+      prevNextButtons: false,
+      pageDots: true,
+      resize: false, // false if carousel uses per.height
+      setGallerySize: false, // false if carousel uses per.height
+      wrapAround: true // infinite loop
     });
 
   };

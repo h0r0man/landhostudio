@@ -8,6 +8,63 @@ get_header(); ?>
 
 	<?php while (have_posts()): the_post(); ?>
     
+		<?php
+		
+			// 1. le quotes vanno sullo stesso slider di homepage
+			// 2. l’immagine non è obbligatoria?
+		
+		?>
+		
+		<article class="page page--hello">
+
+			<h2 class="hidden"><?php the_title(); ?></h2>
+			
+      <?php if (have_rows('hello_testimonial')): ?>
+
+				<section class="testimonials">
+
+					<h3 class="hidden"><?php _e('Testimonials', 'horoman'); ?></h3>
+
+          <div class="testimonials__slides">
+
+					  <?php while (have_rows('hello_testimonial')) : the_row(); ?>
+
+              <?php
+                $quote = get_sub_field('hello_testimonial_quote');
+                $image = get_sub_field('hello_testimonial_image');
+                $size = 'large';
+                $thumbLarge = $image['sizes'][ $size ];
+              ?>
+
+  						<div class="testimonials__slide<?php if ($image): ?> testimonials__slide--image<?php endif; ?>">
+
+  							<?php if ($quote): ?>
+                  <div class="testimonials__slide-content">
+                    <h4><?php the_sub_field('hello_testimonial_quote'); ?></h4>
+                    <?php the_sub_field('hello_testimonial_author'); ?>
+                  </div>
+  							<?php endif; ?>
+
+                <?php if ($image): ?>
+                  <div class="testimonials__slide-image">
+                    <img src="<?php echo $thumbLarge ?>" alt="<?php echo $thumbLarge['alt'] ?>" />
+                  </div>
+                <?php endif; ?>
+
+  						</div>
+
+            <?php endwhile; ?>
+
+          </div>
+
+				</section>
+
+			<?php endif; ?>
+			
+		</article>
+		
+    <!-- OLD SHIT BELOW -->
+    
     <div class="content-page">
 
     	<h2><?php the_title(); ?></h2>
