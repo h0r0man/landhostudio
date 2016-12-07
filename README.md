@@ -2,6 +2,15 @@
 
 An official Land Ho WordPress theme
 
+## To-do’s
+
+- [ ] base template for pages eg. legal stuff
+- [ ] hello template
+- [ ] loading between the pages
+- [ ] social metatags (try plugin?)
+- [ ] sitemap plugin
+- [ ] cache plugin
+
 ## Installation
 
 1. Install [gulp](http://gulpjs.com)
