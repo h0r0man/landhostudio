@@ -111,7 +111,7 @@ $(function() {
 
   function initGridContent() {
 
-    $('.grid__item-link').hover(mouseEnter, mouseLeave);
+    $('.grid__item-link--enabled').hover(mouseEnter, mouseLeave);
     
     var titleBackup       = $('.header__item--head-description h2').text(),
         descriptionBackup = $('.header__item--head-description span').text();
