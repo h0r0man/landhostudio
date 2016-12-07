@@ -76,8 +76,8 @@
   // Content -------------------------------------------------------------------
 
   &__content
-    margin-top: em-calc(32)
-    margin-bottom: em-calc(32)
+    margin-top: em-calc(16)
+    margin-bottom: em-calc(38)
 
     @include media(max-width $to-small)
       display: flex
@@ -89,7 +89,7 @@
       display: flex
       flex-wrap: wrap
       width: calc(#{100% - ($gutter * 2)} + #{em-calc(16)})
-      margin: em-calc(48) auto
+      margin: em-calc(20) auto em-calc(48)
 
     &-header
       @include media(max-width $to-small)
