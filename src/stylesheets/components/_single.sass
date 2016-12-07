@@ -123,6 +123,10 @@
         
       a
         border-bottom: rem-calc(1) solid
+        transition: border 150ms
+
+        &:hover
+          border-color: transparent
         
       .stage-1
         display: inline
@@ -147,6 +151,13 @@
 
       p
         margin: 0
+        
+      a
+        transition: border 150ms
+        border-bottom: rem-calc(1) solid transparent
+
+        &:hover
+          border-color: $color-2
 
     &-more
       height: 0
