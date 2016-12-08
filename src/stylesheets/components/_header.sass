@@ -139,7 +139,9 @@ body
           display: inline
 
   &__menus
-    display: none
+    visibility: hidden
+    opacity: 0
+    transition: opacity 250ms
     
     @include media($from-small)
       position: absolute
@@ -152,7 +154,8 @@ body
     
     .header--work &
       @include media($from-small)
-        display: block
+        visibility: visible
+        opacity: 1
 
     ul
       list-style: none
