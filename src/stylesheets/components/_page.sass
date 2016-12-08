@@ -21,6 +21,9 @@
       padding-left: em-calc(16)
       padding-right: em-calc(16)
 
+      *
+        max-width: em-calc(360)
+
     h1, h2, h3, h4, h5, h6
       font-weight: bold
 
@@ -89,7 +92,7 @@
       
       *
         @include media($from-small)
-          max-width: em-calc(480)
+          max-width: rem-calc(640)
           margin-left: auto
           margin-right: auto
 
