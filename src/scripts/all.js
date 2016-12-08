@@ -1,7 +1,7 @@
 //=include ../../src/scripts/modernizr.js
 //=include ../../bower_components/jquery/dist/jquery.js
 //=include ../../bower_components/flickity/dist/flickity.pkgd.js
-//=include ../../bower_components/isotope/dist/isotope.pkgd.js
+//=include ../../bower_components/masonry/dist/masonry.pkgd.js
 //=include ../../bower_components/vimeo-jquery-api/dist/jquery.vimeo.api.js
 //=include ../../bower_components/fastclick/lib/fastclick.js
 //=include ../../bower_components/viewport-units-buggyfill/viewport-units-buggyfill.js
@@ -76,22 +76,13 @@ $(function() {
 
   function initGrid() {
 
-    var $grid = $('.grid__items').isotope({
+    var $grid = $('.grid__items').masonry({
       containerStyle: null,
+      columnWidth: '.grid__sizer',
+      gutter: '.grid__gutter',
       itemSelector: '.grid__item',
       percentPosition: true,
-      masonry: {
-        columnWidth: '.grid__sizer',
-        gutter: '.grid__gutter'
-      },
-      transitionDuration: 750,
-      stagger: 30,
-      hiddenStyle: {
-        opacity: 0
-      },
-      visibleStyle: {
-        opacity: 1
-      }
+    });
     });
 
   }
