@@ -46,7 +46,17 @@
     background: $color-2
     border-radius: 50%
     opacity: 0.0625
+    transform: scale(1)
     cursor: pointer
+    transition: opacity 250ms, transform 500ms
+
+    &:hover
+      opacity: 0.125
+      transform: scale(1.25)
 
     &.is-selected
+      transform: scale(1.25)
       opacity: 0.25
+
+      &:hover
+        opacity: 0.33

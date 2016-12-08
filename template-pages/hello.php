@@ -70,7 +70,8 @@ get_header(); ?>
     	<h2><?php the_title(); ?></h2>
     	
 			<?php if(have_rows('hello_testimonial')): ?>
-				<div class="testimonials">
+	
+  			<div class="testimonials">
 
 					<h3><?php _e('Testimonials', 'horoman'); ?></h3>
 
