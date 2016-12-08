@@ -77,6 +77,7 @@ $(function() {
   function initGrid() {
 
     var $grid = $('.grid__items').isotope({
+      containerStyle: null,
       itemSelector: '.grid__item',
       percentPosition: true,
       masonry: {
