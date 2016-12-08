@@ -89,14 +89,16 @@
     &-link
       &--enabled
         @include media($from-small)
-          backface-visibility: hidden
-          perspective: 1000
-          transform: scale(1)
-          transition: transform 1s cubic-bezier(0.09, 0.43, 0.92, 0.86)
+          .grid__item-image
+            backface-visibility: hidden
+            perspective: 1000
+            transform: scale(1)
+            transition: transform 1s cubic-bezier(0.09, 0.43, 0.92, 0.86), opacity 1.5s
 
         &:hover
           @include media($from-small)
-            transform: scale(1.05)
+            .grid__item-image
+              transform: scale(1.05)
 
           .grid__item-content
             @include media(max-width $to-small)
@@ -159,4 +161,3 @@
       .grid__item-image
         @include media($from-small)
           opacity: 1
-          transition: opacity 250ms
