@@ -61,6 +61,22 @@ get_header(); ?>
 
 			<?php endif; ?>
 			
+      <?php if(have_rows('page_columns')): ?>
+
+        <div class="page__columns">
+
+          <?php while (have_rows('page_columns')) : the_row(); ?>
+            <?php if (get_sub_field('page_column')): ?>
+              <div class="page__column">
+                <?php the_sub_field('page_column'); ?>
+              </div>
+            <?php endif; ?>
+          <?php endwhile; ?>
+
+        </div>
+
+      <?php endif; ?>
+      
 		</article>
 		
     <!-- OLD SHIT BELOW -->
