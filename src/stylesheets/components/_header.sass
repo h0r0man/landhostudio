@@ -8,7 +8,7 @@ body
   left: 0
   width: 100%
   height: em-calc(63)
-  padding: em-calc(19) 0 em-calc(21)
+  padding: em-calc(23) 0 em-calc(20)
   background-color: $color-1
   z-index: 97
   // box-shadow: 0 0 8px 0 rgba($color-2, 0.25)
@@ -63,6 +63,7 @@ body
           display: inline
 
     &--head
+      top: em-calc(18)
       left: em-calc(16)
       text-align: left
       width: calc(#{100% - ($gutter * 2)} - #{em-calc(16)})
@@ -78,8 +79,10 @@ body
         left: $gutter
         width: (100% - ($gutter * 2))
 
+      @include media($from-small)
+        top: em-calc(20)
+
       &-logo
-        
         svg
           width: em-calc(153)
           height: em-calc(22)
