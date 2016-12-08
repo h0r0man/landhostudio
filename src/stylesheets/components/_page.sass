@@ -25,6 +25,13 @@
     h1, h2, h3, h4, h5, h6
       font-weight: bold
 
+    a
+      border-bottom: rem-calc(1) solid transparent
+      transition: border 150ms
+
+      &:hover
+        border-color: $color-2
+
 .testimonials
   margin-bottom: ($grid-gutter * 2)
 
