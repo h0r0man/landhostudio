@@ -82,8 +82,14 @@ $(function() {
       gutter: '.grid__gutter',
       itemSelector: '.grid__item',
       percentPosition: true,
+      initLayout: false
     });
+
+    $grid.on('layoutComplete', function(event, items) {
+      $(this).addClass('grid__items--loaded');
     });
+    
+    $grid.masonry();
 
   }
 
