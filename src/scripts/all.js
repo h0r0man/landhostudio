@@ -174,7 +174,7 @@ $(function() {
       pauseAutoPlayOnHover: false,
       percentPosition: true,
       prevNextButtons: false,
-      pageDots: true,
+      pageDots: false,
       resize: false, // false if carousel uses per.height
       setGallerySize: false, // false if carousel uses per.height
       wrapAround: true // infinite loop
