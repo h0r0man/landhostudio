@@ -76,18 +76,16 @@
   // Content -------------------------------------------------------------------
 
   &__content
+    display: flex
+    flex-wrap: wrap
     margin-top: em-calc(16)
     margin-bottom: em-calc(38)
 
     @include media(max-width $to-small)
-      display: flex
-      flex-wrap: wrap
       margin-left: em-calc(16)
       margin-right: em-calc(16)
 
     @include media($from-small)
-      display: flex
-      flex-wrap: wrap
       width: calc(#{100% - ($gutter * 2)} + #{em-calc(16)})
       margin: em-calc(20) auto em-calc(48)
 
