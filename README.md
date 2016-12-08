@@ -4,8 +4,8 @@ An official Land Ho WordPress theme
 
 ## To-do’s
 
-- [ ] base template for pages eg. legal stuff
-- [ ] hello template
+- [x] base template for pages eg. legal stuff
+- [x] hello template
 - [ ] loading between the pages
 - [ ] social metatags (try plugin?)
 - [ ] sitemap plugin
