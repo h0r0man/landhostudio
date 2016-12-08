@@ -1,5 +1,30 @@
 .page
 
+  &__columns
+
+    @include media(max-width $to-small)
+      margin-left: em-calc(16)
+      margin-right: em-calc(16)
+
+    @include media($from-small)
+      display: flex
+      flex-wrap: wrap
+      width: calc(#{100% - ($gutter * 2)} + #{em-calc(32)})
+      margin: em-calc(32) auto
+
+  &__column
+    width: 100%
+    margin-bottom: em-calc(32)
+    word-break: break-word
+    
+    @include media($from-small)
+      width: (100% / 3)
+      padding-left: em-calc(16)
+      padding-right: em-calc(16)
+
+    h1, h2, h3, h4, h5, h6
+      font-weight: bold
+
 .testimonials
   margin-bottom: ($grid-gutter * 2)
 
@@ -53,7 +78,7 @@
       // Optional
       color: $color-1
 
-      h4
+      &-title
         font-size: em-calc(18)
 
         @include media($from-small)
