@@ -139,11 +139,14 @@ body
           display: inline
 
   &__menus
-    visibility: hidden
-    opacity: 0
-    transition: opacity 250ms
-    
+
+    @include media(max-width $to-small)
+      visibility: hidden
+      transition: opacity 500ms
+      opacity: 0
+
     @include media($from-small)
+      // display: none
       position: absolute
       top: 0
       left: $gutter
@@ -151,8 +154,32 @@ body
       padding: em-calc(20) 0
       background-color: $color-1
       z-index: 98
-    
+      
+      visibility: hidden
+      transition: opacity 500ms
+      opacity: 0
+
+    .header--menu &
+
+      @include media(max-width $to-small)
+        // display: block
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: $color-3
+        z-index: 1
+        padding: em-calc(16)
+
+        display: flex
+        flex-direction: column
+
+        visibility: visible
+        opacity: 1
+
     .header--work &
+
       @include media($from-small)
         visibility: visible
         opacity: 1
@@ -191,19 +218,3 @@ body
 
       &:hover
         border-bottom: rem-calc(1) solid
-
-    .header--menu &
-
-      @include media(max-width $to-small)
-        display: block
-        position: fixed
-        top: 0
-        left: 0
-        width: 100%
-        height: 100%
-        background-color: $color-3
-        z-index: 1
-        padding: em-calc(16)
-
-        display: flex
-        flex-direction: column
