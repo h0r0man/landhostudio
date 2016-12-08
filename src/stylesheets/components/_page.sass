@@ -1,5 +1,61 @@
 .page
 
+  &__header
+    margin-bottom: ($grid-gutter * 2)
+
+    @include media($from-small)
+      width: #{100% - ($gutter * 2)}
+      margin: 0 auto ($grid-gutter * 0.75)
+
+    &-content
+      position: relative
+      width: 100%
+      padding-bottom: per-width(16,9)
+      background-color: #EAEFEC
+      
+      .page__header--image &
+        padding-bottom: per-width(16,9)
+        color: $color-1
+        
+      &-title,
+      &-image
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        overflow: hidden
+      
+      &-title
+        display: flex
+        flex-wrap: nowrap
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        z-index: 2
+        text-align: center
+        padding: em-calc(16)
+
+        h2
+          font-size: em-calc(18)
+
+          @include media($from-small)
+            font-size: em-calc(24)
+
+      &-image
+        z-index: 1
+
+        img
+          position: absolute
+          top: 50%
+          left: 50%
+          width: auto
+          min-width: 100%
+          height: auto
+          min-height: 100%
+          max-height: 100%
+          transform: translate(-50%,-50%)
+
   &__columns
 
     @include media(max-width $to-small)
@@ -23,6 +79,14 @@
 
       *
         max-width: em-calc(360)
+
+    p + h1,
+    p + h2,
+    p + h3,
+    p + h4,
+    p + h5,
+    p + h6
+        margin-top: em-calc(32)
 
     h1, h2, h3, h4, h5, h6
       font-weight: bold

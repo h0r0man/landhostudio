@@ -1,15 +1,42 @@
-<article class="content-page">
+<article class="page">
 
-  <div class="title">
-    <h1><?php the_title(); ?></h1>
-  </div>
+  <?php
+    $thumbPost = has_post_thumbnail();
+    $thumbLargeDefault = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), "large");
+  ?>
+
+  <header class="page__header<?php if ($thumbPost): ?> page__header--image<?php endif; ?>">
+    
+    <div class="page__header-content">
+
+      <div class="page__header-content-title">
+        <h2><?php the_title(); ?></h2>
+      </div>
+      
+      <?php if ($thumbPost): ?>
+        <div class="page__header-content-image">
+          <img src="<?php echo $thumbLargeDefault[0]; ?>" alt="<?php echo $thumbLargeDefault['alt'] ?>" />
+        </div>
+      <?php endif; ?>
+
+    </div>
   
-  <div class="content">
-    <?php the_content(); ?>
-  </div>
+  </header>
+  
+  <?php if(have_rows('page_columns')): ?>
 
-  <div class="pagination">
-    <?php wp_link_pages(); ?>
-  </div>
+    <div class="page__columns">
+
+      <?php while (have_rows('page_columns')) : the_row(); ?>
+        <?php if (get_sub_field('page_column')): ?>
+          <div class="page__column">
+            <?php the_sub_field('page_column'); ?>
+          </div>
+        <?php endif; ?>
+      <?php endwhile; ?>
+
+    </div>
+
+  <?php endif; ?>
 	
 </article>
