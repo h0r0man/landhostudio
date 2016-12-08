@@ -19972,24 +19972,24 @@ $(function() {
 
     $('.grid__item-link--enabled').hover(mouseEnter, mouseLeave);
     
-    var titleBackup       = $('.header__item--head-description h2').text(),
-        descriptionBackup = $('.header__item--head-description span').text();
+    var titleBackup       = $('.header__item--head-description span.title').text(),
+        descriptionBackup = $('.header__item--head-description span.description').text();
     
     function mouseEnter(event) {
       
       var title = $('.grid__item-content h2', this).text(),
           description = $('.grid__item-content p', this).text();
       
-      $('.header__item--head-description h2').text(title);
-      $('.header__item--head-description span').text(description);
+      $('.header__item--head-description span.title').text(title);
+      $('.header__item--head-description span.description').text(description);
       $('.header__item--head-description').addClass('header__item--head-description--changed');
       
     };
     
     function mouseLeave(event) {
 
-      $('.header__item--head-description h2').text(titleBackup);
-      $('.header__item--head-description span').text(descriptionBackup);
+      $('.header__item--head-description span.title').text(titleBackup);
+      $('.header__item--head-description span.description').text(descriptionBackup);
       $('.header__item--head-description').removeClass('header__item--head-description--changed');
 
     };

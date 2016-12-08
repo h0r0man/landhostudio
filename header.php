@@ -32,8 +32,8 @@
         </div>
 
         <div class="header__item--head-description">
-          <h2><?php echo get_bloginfo('description'); ?></h2>
-          <span></span>
+          <span class="title"></span>
+          <span class="description"></span>
         </div>
 
       </div>

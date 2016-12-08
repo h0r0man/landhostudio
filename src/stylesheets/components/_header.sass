@@ -82,20 +82,27 @@ body
         
 
       &-description
-        display: none
+        visibility: hidden
+        opacity: 0
 
         @include media($from-small)
-          display: block
-          margin-left: em-calc(8)
+          transition: opacity 250ms ease-in-out
 
-          h2
-            font-weight: bold
+          &--changed
+            visibility: visible
+            opacity: 1
 
-          h2, span
+        @include media($from-small)
+
+          span
             display: inline
-          span:not(:empty)
-            margin-left: em-calc(8)
             
+            &.title
+              font-weight: bold
+
+            &.description
+              &:not(:empty)
+                margin-left: em-calc(8)
 
       a
         border: 0
