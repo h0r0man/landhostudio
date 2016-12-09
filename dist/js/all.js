@@ -19931,6 +19931,17 @@ $(function() {
       }
     
     });
+    
+    $carousel.on('mouseenter', function() {
+      // $carousel.flickity('pausePlayer');
+      $carousel.on('mouseleave', onNavMouseleave);
+    });
+
+    function onNavMouseleave() {
+      // $carousel.flickity('unpausePlayer');
+      $carousel.flickity('playPlayer');
+      $carousel.off('mouseleave', onNavMouseleave);
+    };
 
   };
 
