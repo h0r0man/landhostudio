@@ -57,7 +57,7 @@
     <div class="single__content-nav">
 
       <?php if (get_previous_post_link() || get_next_post_link()): ?>
-        <p><?php if (get_next_post_link()): ?><?php next_post_link('%link', 'Next'); ?><?php endif; ?><?php if (get_previous_post_link() && get_next_post_link()): ?> / <?php endif; ?><?php if (get_previous_post_link()): ?><?php previous_post_link('%link', 'Previous'); ?><?php endif; ?></p>
+        <p><?php if (get_previous_post_link()): ?><?php previous_post_link('%link', 'Previous'); ?><?php endif; ?><?php if (get_previous_post_link() && get_next_post_link()): ?> / <?php endif; ?><?php if (get_next_post_link()): ?><?php next_post_link('%link', 'Next'); ?><?php endif; ?></p>
       <?php endif; ?>
       
       <?php if (get_field('work_pages')): ?>
