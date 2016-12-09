@@ -173,6 +173,13 @@
         height: auto
         opacity: 1
 
+      a
+        border-bottom: rem-calc(1) solid transparent
+        transition: border 150ms
+
+        &:hover
+          border-color: $color-2
+
       &-1,
       &-2
         @include media(max-width $to-small)
