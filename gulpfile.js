@@ -28,7 +28,7 @@ var browserSync   = require('browser-sync').create(),
 
 // Url -------------------------------------------------------------------------
 
-var url           = 'http://land-ho-studio.dev/';
+var url           = 'http://landhostudio:8888/';
 
 // Paths -----------------------------------------------------------------------
 
