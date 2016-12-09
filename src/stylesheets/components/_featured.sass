@@ -71,7 +71,10 @@
       
       a
         padding-bottom: em-calc(1)
-        border-bottom: rem-calc(3) solid
+        border-bottom: rem-calc(2) solid
+
+        @include media($from-small)
+          border-width: rem-calc(3)
 
     &-image
       z-index: 2
