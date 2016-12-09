@@ -11,7 +11,7 @@ An official Land Ho WordPress theme
 - [ ] sitemap plugin
 - [ ] cache plugin
 - [x] risolvere il problema dei bordi percentuali in features
-- [ ] flickity dopo swipe non parte in automatico
+- [x] flickity dopo swipe non parte in automatico
 
 ## Installation
 
