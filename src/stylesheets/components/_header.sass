@@ -203,6 +203,12 @@ body
       margin: 0
       padding: 0
 
+    .categories-page-container,
+    .menu-page-container
+      @include media(max-width $to-small)
+        font-size: em-calc(24)
+        font-weight: bold
+
     .menu-page-container
       clear: both
       padding-top: em-calc(16)
@@ -216,6 +222,10 @@ body
       &.current-cat
         a
           border-bottom: rem-calc(1) solid
+
+          @include media(max-width $to-small)
+            border-width: rem-calc(2)
+
           &:hover
             border-color: transparent
 

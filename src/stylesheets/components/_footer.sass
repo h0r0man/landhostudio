@@ -7,6 +7,9 @@
     bottom: em-calc(7)
     z-index: 99
     color: $color-1
+    
+    a
+      color: $color-1
 
   @include media(max-width $to-small)
     padding-left: em-calc(16)
@@ -15,6 +18,16 @@
   @include media($from-small)
     width: #{100% - ($gutter * 2)}
     margin: em-calc(48) auto 0
+
+  a
+    border-bottom: rem-calc(1) solid transparent
+    transition: border 150ms
+
+    &:hover
+      border-color: $color-2
+
+      .no-scroll &
+        border-color: $color-1
 
   .error-404 &
     display: none
