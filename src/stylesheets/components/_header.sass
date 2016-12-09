@@ -236,12 +236,16 @@ body
         float: left
         clear: both
         margin-bottom: em-calc(4)
+        border-width: rem-calc(2)
 
       @include media($from-small)
         margin-right: em-calc(24)
 
       &:hover
         border-bottom: rem-calc(1) solid
+
+        @include media(max-width $to-small)
+          border-width: rem-calc(2)
 
   .error-404 &
     display: none
