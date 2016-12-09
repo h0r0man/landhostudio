@@ -10,6 +10,7 @@ An official Land Ho WordPress theme
 - [ ] social metatags (try plugin?)
 - [ ] sitemap plugin
 - [ ] cache plugin
+- [ ] risolvere il problema dei bordi percentuali in features
 
 ## Installation
 
