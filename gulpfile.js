@@ -26,10 +26,14 @@ var webpackstream = require('webpack-stream');
 var browserSync   = require('browser-sync').create(),
     reload        = browserSync.reload;
 
+// Url -------------------------------------------------------------------------
+
+var url           = 'http://land-ho-studio.dev/';
+
 // Paths -----------------------------------------------------------------------
 
-var source      = './src',
-    destination = './dist';
+var source        = './src',
+    destination   = './dist';
 
 // Stylesheets -----------------------------------------------------------------
 
@@ -110,7 +114,7 @@ gulp.task('fonts', function() {
 gulp.task('watch', function() {
   browserSync.init({
     files: ['{template-pages,templates-parts}/**/*.php', '*.php'],
-    proxy: 'http://landhostudio:8888/',
+    proxy: url,
     notify: false,
     port: 2016,
     ghostMode: {
