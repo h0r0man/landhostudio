@@ -20051,17 +20051,17 @@ $(function() {
       wrapAround: true // infinite loop
     });
 
-  };
+    $carousel2.on('mouseenter', function() {
+      // $carousel.flickity('pausePlayer');
+      $carousel2.on('mouseleave', onNavMouseleave2);
+    });
 
-  $carousel2.on('mouseenter', function() {
-    // $carousel.flickity('pausePlayer');
-    $carousel2.on('mouseleave', onNavMouseleave2);
-  });
+    function onNavMouseleave2() {
+      // $carousel.flickity('unpausePlayer');
+      $carousel2.flickity('playPlayer');
+      $carousel2.off('mouseleave', onNavMouseleave2);
+    };
 
-  function onNavMouseleave2() {
-    // $carousel.flickity('unpausePlayer');
-    $carousel2.flickity('playPlayer');
-    $carousel2.off('mouseleave', onNavMouseleave2);
   };
 
   init();
