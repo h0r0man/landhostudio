@@ -1,22 +1,27 @@
 .featured
   margin-bottom: ($grid-gutter * 2)
+  opacity: 0
+  transition: opacity 250ms
 
   @include media($from-small)
     width: #{100% - ($gutter * 2)}
     margin: 0 auto ($grid-gutter * 0.75)
   
+  .pace-done &
+    opacity: 1
+  
   &__slides
     position: relative
     width: 100%
     padding-bottom: 100%
-    opacity: 0
-    transition: opacity 1.5s
+    // opacity: 0
+    // transition: opacity 1.5s
 
     @include media($from-small)
       padding-bottom: per-width(16,9)
 
-    &.flickity-enabled
-      opacity: 1
+    // &.flickity-enabled
+    //   opacity: 1
 
   &__slide
     position: absolute

@@ -1,7 +1,22 @@
 .grid
+  opacity: 0
+  transition: opacity 250ms, transform 1s
+  transition-delay: 250ms
+  transform: translateY(32px)
+
+  .index &
+    transition-delay: 0s
+
+  .single &
+    transition-delay: 500ms
+
   @include media($from-small)
     width: #{100% - ($gutter * 2)}
     margin: auto
+
+  .pace-done &
+    opacity: 1
+    transform: translateY(0px)
 
   &--two
     // layout con 2 colonne
@@ -11,11 +26,11 @@
   &__items
     position: relative
     overflow: hidden
-    opacity: 0
-    transition: opacity 250ms
-
-    &--loaded
-      opacity: 1
+    // opacity: 0
+    // transition: opacity 250ms
+    //
+    // &--loaded
+    //   opacity: 1
 
   // Isotope calculation -------------------------------------------------------
   

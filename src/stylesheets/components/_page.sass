@@ -57,6 +57,10 @@
           transform: translate(-50%,-50%)
 
   &__columns
+    opacity: 0
+    transition: opacity 250ms, transform 1s
+    transition-delay: 250ms
+    transform: translateY(32px)
 
     @include media(max-width $to-small)
       margin: em-calc(32) em-calc(16)
@@ -66,6 +70,10 @@
       flex-wrap: wrap
       width: calc(#{100% - ($gutter * 2)} + #{em-calc(32)})
       margin: em-calc(64) auto em-calc(32)
+
+    .pace-done &
+      opacity: 1
+      transform: translateY(0px)
 
   &__column
     width: 100%
@@ -106,10 +114,15 @@
 
 .testimonials
   margin-bottom: ($grid-gutter * 2)
+  opacity: 0
+  transition: opacity 250ms
 
   @include media($from-small)
     width: #{100% - ($gutter * 2)}
     margin: 0 auto ($grid-gutter * 0.75)
+
+  .pace-done &
+    opacity: 1
 
   &__slides
     position: relative

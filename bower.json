@@ -15,7 +15,8 @@
     "viewport-units-buggyfill": "^0.6.0",
     "vimeo-jquery-api": "^0.10.3",
     "fastclick": "^1.0.6",
-    "masonry": "^4.1.1"
+    "masonry": "^4.1.1",
+    "PACE": "pace#^1.0.2"
   },
   "devDependencies": {}
 }

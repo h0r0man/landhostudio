@@ -1,4 +1,3 @@
-//=include ../../src/scripts/modernizr.js
 //=include ../../bower_components/jquery/dist/jquery.js
 //=include ../../bower_components/flickity/dist/flickity.pkgd.js
 //=include ../../bower_components/masonry/dist/masonry.pkgd.js
@@ -34,6 +33,10 @@ $(function() {
       $('.header').toggleClass('header--menu');
       $('body').toggleClass('no-scroll');
       return false;
+    });
+
+    $('.categories-page-container a').click(function () {
+      $('.header').removeClass('header--work header--menu');
     });
 
   };

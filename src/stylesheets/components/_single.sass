@@ -3,9 +3,15 @@
   // Hero ----------------------------------------------------------------------
 
   &__hero
+    opacity: 0
+    transition: opacity 250ms
+
     @include media($from-small)
       width: #{100% - ($gutter * 2)}
       margin: 0 auto
+
+    .pace-done &
+      opacity: 1
 
     &-container
       position: relative
@@ -81,6 +87,10 @@
     margin-top: em-calc(16)
     margin-bottom: em-calc(38)
 
+    opacity: 0
+    transition: opacity 250ms
+    transition-delay: 250ms
+
     @include media(max-width $to-small)
       margin-left: em-calc(16)
       margin-right: em-calc(16)
@@ -88,6 +98,9 @@
     @include media($from-small)
       width: calc(#{100% - ($gutter * 2)} + #{em-calc(32)})
       margin: em-calc(20) auto em-calc(48)
+
+    .pace-done &
+      opacity: 1
 
     &-header
       @include media($from-small)
