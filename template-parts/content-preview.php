@@ -37,9 +37,9 @@ $thumbLargeDefault = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID
       <?php if ($image || $thumbPost): ?>
         <div class="grid__item-image">
           <?php if ($image): ?>
-            <img src="<?php echo $thumbLarge ?>" alt="<?php echo $thumbLarge['alt'] ?>" />
+            <?php echo wp_get_attachment_image( $image, 'large', false, array() ); ?>
           <?php elseif ($thumbPost): ?>
-            <img src="<?php echo $thumbLargeDefault[0]; ?>" alt="<?php echo $thumbLargeDefault['alt'] ?>" />
+            <?php the_post_thumbnail(); ?>
           <?php endif; ?>
         </div>
       <?php endif; ?>
@@ -54,9 +54,9 @@ $thumbLargeDefault = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID
       
       <div class="grid__item-image">
         <?php if ($image): ?>
-          <img src="<?php echo $thumbLarge; ?>" alt="<?php echo $thumbLarge['alt']; ?>" />
+          <?php echo wp_get_attachment_image( $image, 'large', false, array() ); ?>
         <?php elseif ($thumbPost): ?>
-          <img src="<?php echo $thumbLargeDefault[0]; ?>" alt="<?php echo $thumbLargeDefault['alt']; ?>" />
+          <?php the_post_thumbnail(); ?>
         <?php endif; ?>
       </div>
       
