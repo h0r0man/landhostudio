@@ -76,6 +76,56 @@
       add_theme_support('soil-nav-walker');
       add_theme_support('soil-relative-urls');
       
+			// Social ----------------------------------------------------------------
+
+			function social_description() {
+				if (is_home() || is_page() || is_search()) {
+					bloginfo('description');
+				} else {
+					while (have_posts()) {
+						the_post();
+						the_excerpt_rss();
+					}
+				}
+			}
+
+			function og_type() {
+				if (is_home() || is_page() || is_search()) {
+					echo "company";
+				} else {
+					echo "article";
+				}
+			}
+
+			function og_url() {
+				if (is_home()) {
+					echo esc_url(home_url('/'));
+				} else {
+					echo get_permalink($post->ID);
+				}
+			}
+
+			function og_image() {
+				if (is_home() || is_page()) {
+					the_field('options_image', 'option');
+				} else {
+					if (has_post_thumbnail()) {
+						$url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
+						echo $url;
+					} else {
+						the_field('options_image', 'option');
+					}
+				}
+			}
+
+			function twitter_card() {
+				if (is_home() || is_page() || is_search()) {
+					echo "summary";
+				} else {
+					echo "summary_large_image";
+				}
+			}
+			
 			// ACF options -----------------------------------------------------------
 			
 			if (function_exists('acf_add_options_page')) {
@@ -396,6 +446,65 @@
         			'name' => 'options_analytics',
         			'type' => 'textarea',
         			'instructions' => 'Inserire il codice JavaScript generato dal servizio di statistiche',
+        			'required' => 0,
+        			'conditional_logic' => 0,
+        			'wrapper' => array (
+        				'width' => '',
+        				'class' => '',
+        				'id' => '',
+        			),
+        		),
+        		array (
+        			'default_value' => '',
+        			'maxlength' => '',
+        			'placeholder' => '',
+        			'prepend' => '',
+        			'append' => '',
+        			'key' => 'field_584ea49c6893a',
+        			'label' => 'Verifica la proprietà del sito',
+        			'name' => 'options_google_verification',
+        			'type' => 'text',
+        			'instructions' => 'Inserire il numero generato da Google Site Verification',
+        			'required' => 0,
+        			'conditional_logic' => 0,
+        			'wrapper' => array (
+        				'width' => '',
+        				'class' => '',
+        				'id' => '',
+        			),
+        		),
+        		array (
+        			'placement' => 'top',
+        			'endpoint' => 0,
+        			'key' => 'field_584ea576909ed',
+        			'label' => 'Social',
+        			'name' => '',
+        			'type' => 'tab',
+        			'instructions' => '',
+        			'required' => 0,
+        			'conditional_logic' => 0,
+        			'wrapper' => array (
+        				'width' => '',
+        				'class' => '',
+        				'id' => '',
+        			),
+        		),
+        		array (
+        			'return_format' => 'url',
+        			'preview_size' => 'thumbnail',
+        			'library' => 'all',
+        			'min_width' => '',
+        			'min_height' => '',
+        			'min_size' => '',
+        			'max_width' => '',
+        			'max_height' => '',
+        			'max_size' => '',
+        			'mime_types' => 'jpg, jpeg, png, gif',
+        			'key' => 'field_584ea57f909ee',
+        			'label' => 'Immagine',
+        			'name' => 'options_image',
+        			'type' => 'image',
+        			'instructions' => 'Estensioni del file supportati: `jpg, jpeg, png, gif` di cui rapporto a 16:9',
         			'required' => 0,
         			'conditional_logic' => 0,
         			'wrapper' => array (
