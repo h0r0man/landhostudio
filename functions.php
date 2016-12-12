@@ -152,7 +152,7 @@
 
 				acf_add_local_field_group(array (
 					'key' => 'group_5840634ca5460',
-					'title' => 'Options',
+					'title' => 'Opzioni',
 					'fields' => array (
 						array (
 							'placement' => 'top',
