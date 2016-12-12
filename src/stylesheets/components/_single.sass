@@ -90,14 +90,16 @@
       margin: em-calc(20) auto em-calc(48)
 
     &-header
-      @include media(max-width $to-small)
+      @include media($from-small)
+        padding-left: em-calc(16)
+        padding-right: em-calc(16)
+
+      @include media(max-width $to-medium)
         order: 1
         width: 50%
 
-      @include media($from-small)
+      @include media($from-medium)
         width: (100% / 3)
-        padding-left: em-calc(16)
-        padding-right: em-calc(16)
 
       h2
         font-weight: bold
@@ -106,15 +108,17 @@
         margin: 0
 
     &-body
-      @include media(max-width $to-small)
+      @include media($from-small)
+        padding-left: em-calc(16)
+        padding-right: em-calc(16)
+
+      @include media(max-width $to-medium)
         order: 3
         width: 100%
         margin-top: em-calc(16)
       
-      @include media($from-small)
+      @include media($from-medium)
         width: (100% / 3)
-        padding-left: em-calc(16)
-        padding-right: em-calc(16)
       
       p
         margin: 0
@@ -138,14 +142,16 @@
     &-nav
       text-align: right
 
-      @include media(max-width $to-small)
+      @include media($from-small)
+        padding-left: em-calc(16)
+        padding-right: em-calc(16)
+
+      @include media(max-width $to-medium)
         order: 2
         width: (100% / 2)
 
-      @include media($from-small)
+      @include media($from-medium)
         width: (100% / 3)
-        padding-left: em-calc(16)
-        padding-right: em-calc(16)
 
       p
         margin: 0
@@ -163,11 +169,12 @@
       opacity: 0
       transition: opacity 500ms ease-in-out
   
-      @include media(max-width $to-small)
-        order: 4
       @include media($from-small)
         display: flex
         flex-wrap: wrap
+
+      @include media(max-width $to-medium)
+        order: 4
 
       .single__content--opened &
         height: auto
@@ -182,13 +189,18 @@
 
       &-1,
       &-2
+        @include media($from-small)
+          padding-left: em-calc(16)
+          padding-right: em-calc(16)
+
         @include media(max-width $to-small)
           width: 100%
 
-        @include media($from-small)
+        @include media(max-width $to-medium)
+          width: (100% / 2)
+
+        @include media($from-medium)
           width: (100% / 3)
-          padding-left: em-calc(16)
-          padding-right: em-calc(16)
 
       &-1
       &-2
