@@ -9,9 +9,14 @@
     position: relative
     width: 100%
     padding-bottom: 100%
+    opacity: 0
+    transition: opacity 1.5s
 
     @include media($from-small)
       padding-bottom: per-width(16,9)
+
+    &.flickity-enabled
+      opacity: 1
 
   &__slide
     position: absolute
@@ -21,7 +26,8 @@
     height: 100%
     overflow: hidden
     opacity: 0
-    transition: opacity 1.5s
+    @include media($from-small)
+      transition: opacity 250ms
 
     // Loading fix
     &:first-of-type
