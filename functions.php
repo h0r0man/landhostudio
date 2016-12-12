@@ -111,6 +111,7 @@
 					the_field('options_image', 'option');
 				} else {
 					if (has_post_thumbnail()) {
+            echo site_url();
 						$url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
 						echo $url;
 					} else {
