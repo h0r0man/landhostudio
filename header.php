@@ -11,6 +11,7 @@
     ?>
       <meta name="description" content="<?php echo $description; ?>">
     <?php endif; ?>
+    <meta name="pinterest" content="nopin">
   </head>
   <body>
 
