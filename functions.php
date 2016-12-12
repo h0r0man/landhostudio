@@ -99,7 +99,7 @@
 
 			function og_url() {
 				if (is_home()) {
-					echo esc_url(home_url('/'));
+					echo site_url();
 				} else {
 					echo get_permalink($post->ID);
 				}
@@ -107,12 +107,14 @@
 
 			function og_image() {
 				if (is_home() || is_page()) {
+					echo site_url();
 					the_field('options_image', 'option');
 				} else {
 					if (has_post_thumbnail()) {
 						$url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
 						echo $url;
 					} else {
+						echo site_url();
 						the_field('options_image', 'option');
 					}
 				}
