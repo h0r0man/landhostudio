@@ -4,3 +4,7 @@ html, body
 body
   color: $color-2
   margin: 0
+
+  @include media($from-wqhd)
+    margin: 0 auto
+    max-width: rem-calc(3000)

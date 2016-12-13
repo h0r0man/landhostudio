@@ -13,6 +13,11 @@ body
   z-index: 97
   // box-shadow: 0 0 8px 0 rgba($color-2, 0.25)
 
+  @include media($from-wqhd)
+    right: 0
+    max-width: rem-calc(3000)
+    margin: 0 auto
+
   &.header--menu
     @include media(max-width $to-small)
       *
