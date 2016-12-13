@@ -57,13 +57,13 @@
           $labels->not_found_in_trash = 'Non ce un cazzo…';
       }
       add_action( 'init', 'change_post_object_label' );
-			
+      
 			// Load the assets -------------------------------------------------------
 			
 			function init_assets() {
         
         wp_enqueue_style('all-css', get_template_directory_uri() . '/dist/css/all.css', 'all');
-				
+
         wp_register_script('all-top-js', get_template_directory_uri() . '/dist/js/all-top.js', '', '', false);
         wp_enqueue_script('all-top-js');
         
@@ -72,7 +72,23 @@
 
 			}
 			add_action('wp_enqueue_scripts', 'init_assets');
+
+      // Async load ------------------------------------------------------------
       
+      function my_async_scripts( $tag, $handle, $src ) {
+
+        // the handles of the enqueued scripts we want to async
+        $async_scripts = array('all-top-js');
+
+        if (in_array($handle, $async_scripts)) {
+          return '<script src="' . $src . '" async></script>' . "\n";
+        }
+
+        return $tag;
+
+      }
+      add_filter('script_loader_tag', 'my_async_scripts', 10, 3);
+
       // Soil ------------------------------------------------------------------
       
       add_theme_support('soil-clean-up');
