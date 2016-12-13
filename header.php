@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <?php wp_head(); ?>
     <?php
       $description = get_bloginfo('description');
@@ -12,44 +13,13 @@
       <meta name="description" content="<?php echo $description; ?>">
     <?php endif; ?>
     
-    <!-- App -->
     <meta name="theme-color" content="#FFF">
-
-    <!-- Google -->
     <meta name="google-site-verification" content="<?php the_field('options_google_verification', 'option'); ?>">
 
-    <!-- Facebook -->
-    <meta property="og:title" content="<?php wp_title('–', true, 'right'); ?><?php bloginfo('name'); ?>">
-    <meta property="og:type" content="<?php og_type(); ?>">
-    <meta property="og:image" content="<?php og_image(); ?>">
-    <meta property="og:url" content="<?php og_url(); ?>">
-    <meta property="og:site_name" content="<?php bloginfo('name'); ?>">
-    <meta property="fb:app_id" content="<?php the_field('options_facebook_app', 'option'); ?>">
+    <?php get_template_part('template-parts/social'); ?>
+    <?php get_template_part('template-parts/icons'); ?>
+    <?php get_template_part('template-parts/criticals'); ?>
 
-    <!-- Twitter -->
-    <meta name="twitter:title" content="<?php wp_title('–', true, 'right'); ?><?php bloginfo('name'); ?>">
-    <meta name="twitter:description" content="<?php social_description(); ?>">
-    <meta name="twitter:image" content="<?php og_image(); ?>">
-    <meta name="twitter:card" content="<?php twitter_card(); ?>">
-
-    <!-- Pinterest -->
-    <meta name="pinterest" content="nopin">
-
-    <!-- Windows -->
-    <meta name="application-name" content="<?php bloginfo('name'); ?>">
-    <meta name="msapplication-square70x70logo" content="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/win/small.jpg">
-    <meta name="msapplication-square150x150logo" content="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/win/medium.jpg">
-    <meta name="msapplication-wide310x150logo" content="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/win/wide.jpg">
-    <meta name="msapplication-square310x310logo" content="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/win/large.jpg">
-    <meta name="msapplication-TileColor" content="">
-
-    <!-- iOS -->
-    <link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/ios/touch-icon-60.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/ios/touch-icon-76.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/ios/touch-icon-120.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/ios/touch-icon-152.png">
-
-    <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/favicon.ico">
   </head>
   <body>
 
