@@ -18,8 +18,6 @@
 
     <?php get_template_part('template-parts/social'); ?>
     <?php get_template_part('template-parts/icons'); ?>
-    <?php get_template_part('template-parts/criticals'); ?>
-
   </head>
   <body>
 
