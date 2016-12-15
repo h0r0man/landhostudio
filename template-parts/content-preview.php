@@ -28,7 +28,7 @@ $thumbLargeDefault = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID
   <a rel="bookmark" class="grid__item-link grid__item-link--enabled" href="<?php the_permalink(); ?>">
 
     <div class="grid__item-content">
-      <h2><?php the_title(); ?></h2>
+      <h2 itemprop="headline"><?php the_title(); ?></h2>
       <?php the_excerpt(); ?>
     </div>
 
@@ -44,7 +44,7 @@ $thumbLargeDefault = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID
         </div>
       <?php endif; ?>
 
-      <div class="grid__item-video">
+      <div class="grid__item-video" itemprop="video">
         <video preload="none" loop muted<?php if ($image || $thumbPost): ?> poster="<?php if ($image): ?><?php echo $thumbLarge; ?><?php elseif ($thumbPost): ?><?php echo $thumbLargeDefault[0]; ?><?php endif; ?>"<?php endif; ?>>
           <source src="<?php the_field('work_video_preview'); ?>" type="video/mp4">
         </video>

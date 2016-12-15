@@ -10,7 +10,7 @@
     <div class="page__header-content">
 
       <div class="page__header-content-title">
-        <h2><?php the_title(); ?></h2>
+        <h2 itemprop="headline"><?php the_title(); ?></h2>
       </div>
       
       <?php if ($thumbPost): ?>
@@ -25,7 +25,7 @@
   
   <?php if(have_rows('page_columns')): ?>
 
-    <div class="page__columns">
+    <div class="page__columns" itemprop="articleBody">
 
       <?php while (have_rows('page_columns')) : the_row(); ?>
         <?php if (get_sub_field('page_column')): ?>

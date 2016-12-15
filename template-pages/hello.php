@@ -7,17 +7,10 @@ get_header(); ?>
 <?php get_header(); ?>
 
 	<?php while (have_posts()): the_post(); ?>
-    
-		<?php
-		
-			// 1. le quotes vanno sullo stesso slider di homepage
-			// 2. l’immagine non è obbligatoria?
-		
-		?>
-		
+
 		<article class="page page--hello" itemscope itemtype="http://schema.org/CreativeWork">
 
-			<h2 class="hidden"><?php the_title(); ?></h2>
+			<h2 class="hidden" itemprop="headline"><?php the_title(); ?></h2>
 			
       <?php if (have_rows('hello_testimonial')): ?>
 
@@ -63,7 +56,7 @@ get_header(); ?>
 			
       <?php if(have_rows('page_columns')): ?>
 
-        <div class="page__columns">
+        <div class="page__columns" itemprop="articleBody">
 
           <?php while (have_rows('page_columns')) : the_row(); ?>
             <?php if (get_sub_field('page_column')): ?>

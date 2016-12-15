@@ -38,11 +38,11 @@
   <div class="single__content">
 
     <div class="single__content-header">
-      <h2><?php the_title(); ?></h2>
+      <h2 itemprop="headline"><?php the_title(); ?></h2>
       <?php the_excerpt(); ?>
     </div>
 
-    <div class="single__content-body">
+    <div class="single__content-body" itemprop="articleBody">
       <?php if (get_field('work_technical')): ?>
         <p><?php the_field('work_technical'); ?></p>
       <?php endif; ?>
