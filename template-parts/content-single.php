@@ -1,4 +1,4 @@
-<article class="single">
+<article class="single" itemscope itemtype="http://schema.org/CreativeWork">
 
   <?php
     $thumbPost = has_post_thumbnail();

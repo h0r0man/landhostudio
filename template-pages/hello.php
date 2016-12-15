@@ -15,7 +15,7 @@ get_header(); ?>
 		
 		?>
 		
-		<article class="page page--hello">
+		<article class="page page--hello" itemscope itemtype="http://schema.org/CreativeWork">
 
 			<h2 class="hidden"><?php the_title(); ?></h2>
 			

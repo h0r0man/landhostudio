@@ -75,7 +75,7 @@
         </button>
       </div>
       
-      <nav class="header__menus">
+      <nav class="header__menus" itemscope itemtype="http://schema.org/SiteNavigationElement">
         <h2 class="hidden"><?php esc_html_e('Menu', 'horoman'); ?></h2>
 
         <?php if (get_categories()): ?>

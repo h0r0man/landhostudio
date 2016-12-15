@@ -17,7 +17,7 @@
               $thumbLarge = $image['sizes'][ $size ];
             ?>
             
-            <article class="featured__slide<?php if (get_sub_field('options_carousel_video', option) && $image): ?> featured__slide--video<?php endif; ?>">
+            <article class="featured__slide<?php if (get_sub_field('options_carousel_video', option) && $image): ?> featured__slide--video<?php endif; ?>" itemscope itemtype="http://schema.org/CreativeWork">
 
               <div class="featured__slide-content">
                 <?php if (get_sub_field('options_carousel_title', option) && get_sub_field('options_carousel_link', option)): ?>
