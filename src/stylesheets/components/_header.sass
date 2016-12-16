@@ -13,6 +13,10 @@ body
   z-index: 97
   // box-shadow: 0 0 8px 0 rgba($color-2, 0.25)
 
+  @include media($from-small)
+    height: em-calc(80)
+    padding: em-calc(30) 0
+
   @include media($from-wqhd)
     right: 0
     max-width: rem-calc(3000)
@@ -82,16 +86,17 @@ body
       justify-content: space-between
 
       @include media($from-small)
+        top: em-calc(28)
         left: $gutter
         width: (100% - ($gutter * 2))
-
-      @include media($from-small)
-        top: em-calc(20)
 
       &-logo
         svg
           width: em-calc(153)
           height: em-calc(22)
+          
+          width: em-calc(139)
+          height: em-calc(20)
 
       &-description
         visibility: hidden
@@ -170,7 +175,7 @@ body
       top: 0
       left: $gutter
       width: (100% - ($gutter * 2))
-      padding: em-calc(20) 0
+      padding: em-calc(30) 0
       background-color: $color-1
       z-index: 98
       
