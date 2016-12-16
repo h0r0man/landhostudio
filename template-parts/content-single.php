@@ -102,6 +102,7 @@
             $galleryVideo = get_sub_field('work_gallery_video');
             $galleryVideoAutoplay = get_sub_field('work_gallery_video_autoplay');
             $galleryVideoAudio = get_sub_field('work_gallery_video_audio');
+            $galleryFrame = get_sub_field('work_gallery_frame');
 
             $image = get_sub_field('work_gallery_image');
             $size = 'large';
@@ -117,7 +118,7 @@
             
           ?>
 
-          <div class="grid__item grid__item--single<?php if($gallerySize == 'medium'): ?> grid__item--medium<?php elseif($gallerySize == 'large'): ?> grid__item--large<?php endif; ?><?php if ($image && $galleryVideo): ?> grid__item--video<?php if (!$galleryVideoAutoplay): ?> grid__item--play<?php endif; ?><?php elseif ($image): ?> grid__item--image<?php endif; ?><?php if ($galleryVideoAutoplay): ?> grid__item--autoplay<?php endif; ?>">
+          <div class="grid__item grid__item--single<?php if ($galleryFrame): ?> grid__item--frame<?php endif; ?><?php if($gallerySize == 'medium'): ?> grid__item--medium<?php elseif($gallerySize == 'large'): ?> grid__item--large<?php endif; ?><?php if ($image && $galleryVideo): ?> grid__item--video<?php if (!$galleryVideoAutoplay): ?> grid__item--play<?php endif; ?><?php elseif ($image): ?> grid__item--image<?php endif; ?><?php if ($galleryVideoAutoplay): ?> grid__item--autoplay<?php endif; ?>">
 
             <div class="grid__item-link">
 

@@ -1014,7 +1014,7 @@
 									'ui_off_text' => '',
 									'key' => 'field_58542723c3e93',
 									'label' => 'Cornice',
-									'name' => 'work_gallery_framework_gallery_frame',
+									'name' => 'work_gallery_frame',
 									'type' => 'true_false',
 									'instructions' => '',
 									'required' => 0,
