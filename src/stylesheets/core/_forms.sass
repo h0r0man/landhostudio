@@ -1,4 +1,21 @@
+input
+  width: 100%
+  line-height: $line-height
+  margin: 0
+  padding: 0
+  font-size: 100%
+  border: none
+  background-color: transparent
+
+button,
+input
+  overflow: visible
+
+  &:focus
+    outline: 0
+
 button
+  text-transform: none
   font-size: 1em
   -webkit-appearance: none
   border: 0
@@ -9,6 +26,3 @@ button
   line-height: $line-height
   cursor: pointer
   -webkit-tap-highlight-color: rgba(0,0,0,0)
-
-  &:focus
-    outline: 0

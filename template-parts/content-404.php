@@ -1,4 +1,4 @@
-<article class="error" itemscope itemtype="http://schema.org/CreativeWork">
+<article class="error-404" itemscope itemtype="http://schema.org/CreativeWork">
 
   <div class="error__content">
 
