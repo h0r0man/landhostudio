@@ -20,6 +20,10 @@
     @include media($from-small)
       padding-bottom: per-width(16,9)
 
+      &:hover
+        .featured__slide-content
+          opacity: 1
+
     // &.flickity-enabled
     //   opacity: 1
 
@@ -80,6 +84,8 @@
 
       @include media($from-small)
         padding: em-calc(32)
+        opacity: 0
+        transition: opacity 250ms
 
       *
         color: $color-1
