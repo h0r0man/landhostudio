@@ -4,14 +4,11 @@ An official Land Ho WordPress theme
 
 ## To-do’s
 
-- [x] base template for pages eg. legal stuff
-- [x] hello template
-- [ ] loading between the pages
-- [ ] social metatags (try plugin?)
+– [x] levare payoff
+- [x] ingrandire header su desktop
+- [x] featured opacity quando fai hover compare title, su mobile verrà visualizzato sempre
+- [ ] event lister per hover quando scrolli
 - [ ] sitemap plugin
-- [ ] cache plugin
-- [x] risolvere il problema dei bordi percentuali in features
-- [x] flickity dopo swipe non parte in automatico
 
 ## Installation
 
