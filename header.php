@@ -54,7 +54,6 @@
 
         <div class="header__item--head-description">
           <span class="title"></span>
-          <span class="description"></span>
         </div>
 
       </div>
