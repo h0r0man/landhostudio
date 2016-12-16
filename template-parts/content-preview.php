@@ -23,7 +23,7 @@ $thumbLargeDefault = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID
 
 ?>
 
-<article class="grid__item<?php if($postSize == 'small'): ?> grid__item--small<?php elseif($postSize == 'medium'): ?> grid__item--medium<?php elseif($postSize == 'large'): ?> grid__item--large<?php endif; ?><?php if ($postVideoPreview): ?> grid__item--video<?php elseif ($image || $thumbPost): ?> grid__item--image<?php endif; ?>"<?php if (!is_single()): ?> itemscope itemtype="http://schema.org/CreativeWork"<?php endif; ?>>
+<article class="grid__item<?php if($postSize == 'small'): ?> grid__item--small<?php elseif($postSize == 'medium'): ?> grid__item--medium<?php elseif($postSize == 'large'): ?> grid__item--large<?php endif; ?><?php if ($postVideoPreview): ?> grid__item--video grid__item--play<?php elseif ($image || $thumbPost): ?> grid__item--image<?php endif; ?>"<?php if (!is_single()): ?> itemscope itemtype="http://schema.org/CreativeWork"<?php endif; ?>>
 
   <a rel="bookmark" class="grid__item-link grid__item-link--enabled" href="<?php the_permalink(); ?>">
 

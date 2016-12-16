@@ -111,7 +111,7 @@ $(function() {
 
   function initGridVideo() {
 
-    $('.grid__item--video').hover(playVideo, stopVideo);
+    $('.grid__item--play').hover(playVideo, stopVideo);
     
     function playVideo() {
       $('video', this).get(0).currentTime = 0;

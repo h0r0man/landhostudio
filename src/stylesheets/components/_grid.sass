@@ -176,3 +176,17 @@
       .grid__item-image
         @include media($from-small)
           opacity: 1
+
+    &--autoplay
+
+      .grid__item-image
+        @include media($from-small)
+          opacity: 0
+
+    &--single
+      @include media($from-small)
+        &.grid__item--play
+          &:hover
+            cursor: pointer
+          .grid__item-image
+            transition: 250ms

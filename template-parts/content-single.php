@@ -117,7 +117,7 @@
             
           ?>
 
-          <div class="grid__item<?php if($gallerySize == 'medium'): ?> grid__item--medium<?php elseif($gallerySize == 'large'): ?> grid__item--large<?php endif; ?><?php if ($image && $galleryVideo): ?> grid__item--video<?php elseif ($image): ?> grid__item--image<?php endif; ?>">
+          <div class="grid__item grid__item--single<?php if($gallerySize == 'medium'): ?> grid__item--medium<?php elseif($gallerySize == 'large'): ?> grid__item--large<?php endif; ?><?php if ($image && $galleryVideo): ?> grid__item--video<?php if (!$galleryVideoAutoplay): ?> grid__item--play<?php endif; ?><?php elseif ($image): ?> grid__item--image<?php endif; ?><?php if ($galleryVideoAutoplay): ?> grid__item--autoplay<?php endif; ?>">
 
             <div class="grid__item-link">
 
