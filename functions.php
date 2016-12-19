@@ -63,10 +63,10 @@
 			function init_assets() {
         wp_enqueue_style('all-css', get_template_directory_uri() . '/dist/css/all.css', true, true);
 
-        wp_register_script('all-top-js', get_template_directory_uri() . '/dist/js/all-top.js', '', '', false);
+        wp_register_script('all-top-js', get_template_directory_uri() . '/dist/js/all-top.js', array(), '', true);
         wp_enqueue_script('all-top-js');
         
-        wp_register_script('all-bottom-js', get_template_directory_uri() . '/dist/js/all-bottom.js', '', '', true);
+        wp_register_script('all-bottom-js', get_template_directory_uri() . '/dist/js/all-bottom.js', array(), '', true);
         wp_enqueue_script('all-bottom-js');
 
 			}
@@ -91,7 +91,7 @@
       // Soil ------------------------------------------------------------------
       
       add_theme_support('soil-clean-up');
-      // add_theme_support('soil-disable-asset-versioning');
+      add_theme_support('soil-disable-asset-versioning');
       add_theme_support('soil-disable-trackbacks');
       add_theme_support('soil-nav-walker');
       add_theme_support('soil-relative-urls');
