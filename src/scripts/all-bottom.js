@@ -157,11 +157,6 @@ $(function() {
       return false;
     });
 
-    $('.single__hero-iframe iframe').on('pause', function() {
-      $('.single__hero').removeClass('single__hero--playing');
-      $(this).vimeo('seekTo', 0);
-    });
-
     $('.single__hero-iframe iframe').on('finish', function() {
       $('.single__hero').removeClass('single__hero--playing');
     });
