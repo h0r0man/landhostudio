@@ -61,8 +61,7 @@
 			// Load the assets -------------------------------------------------------
 			
 			function init_assets() {
-        
-        wp_enqueue_style('all-css', get_template_directory_uri() . '/dist/css/all.css', 'all');
+        wp_enqueue_style('all-css', get_template_directory_uri() . '/dist/css/all.css', true, true);
 
         wp_register_script('all-top-js', get_template_directory_uri() . '/dist/js/all-top.js', '', '', false);
         wp_enqueue_script('all-top-js');
@@ -92,7 +91,7 @@
       // Soil ------------------------------------------------------------------
       
       add_theme_support('soil-clean-up');
-      add_theme_support('soil-disable-asset-versioning');
+      // add_theme_support('soil-disable-asset-versioning');
       add_theme_support('soil-disable-trackbacks');
       add_theme_support('soil-nav-walker');
       add_theme_support('soil-relative-urls');
