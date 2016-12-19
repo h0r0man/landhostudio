@@ -100,6 +100,14 @@ gulp.task('icons', function() {
     .pipe(browserSync.stream());
 });
 
+// Icons -----------------------------------------------------------------------
+
+gulp.task('images', function() {
+  return gulp.src(source + '/images/**/*.{svg,png,ico}')
+    .pipe(gulp.dest(destination + '/img'))
+    .pipe(browserSync.stream());
+});
+
 // Fonts -----------------------------------------------------------------------
 
 gulp.task('fonts', function() {
@@ -149,7 +157,7 @@ gulp.task('clear', function (done) {
 // Build -----------------------------------------------------------------------
 
 gulp.task('build', function(callback) {
-  runSequence('clear', 'css', 'js', 'icons', 'fonts', callback);
+  runSequence('clear', 'css', 'js', 'icons', 'images', 'fonts', callback);
 });
 
 // Gulp ------------------------------------------------------------------------
