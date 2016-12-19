@@ -7,8 +7,8 @@ An official Land Ho WordPress theme
 – [x] levare payoff
 - [x] ingrandire header su desktop
 - [x] featured opacity quando fai hover compare title, su mobile verrà visualizzato sempre
+- [x] sitemap plugin
 - [ ] event lister per hover quando scrolli
-- [ ] sitemap plugin
 
 ## Installation
 
