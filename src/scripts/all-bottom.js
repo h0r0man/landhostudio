@@ -1,6 +1,5 @@
 //=include ../../bower_components/PACE/pace.js
 //=include ../../bower_components/jquery/dist/jquery.js
-//=include ../../bower_components/imagesloaded/imagesloaded.pkgd.js
 //=include ../../bower_components/flickity/dist/flickity.pkgd.js
 //=include ../../bower_components/masonry/dist/masonry.pkgd.js
 //=include ../../bower_components/vimeo-jquery-api/dist/jquery.vimeo.api.js
