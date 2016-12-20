@@ -103,7 +103,7 @@ gulp.task('icons', function() {
 // Icons -----------------------------------------------------------------------
 
 gulp.task('images', function() {
-  return gulp.src(source + '/images/**/*.{svg,png,ico}')
+  return gulp.src(source + '/images/**/*.{svg,png,ico,gif}')
     .pipe(gulp.dest(destination + '/img'))
     .pipe(browserSync.stream());
 });
