@@ -2,6 +2,7 @@
 <meta property="og:title" content="<?php wp_title('–', true, 'right'); ?><?php bloginfo('name'); ?>">
 <meta property="og:type" content="<?php og_type(); ?>">
 <meta property="og:image" content="<?php og_image(); ?>">
+<meta property="og:description" content="<?php social_description(); ?>">
 <meta property="og:url" content="<?php og_url(); ?>">
 <meta property="og:site_name" content="<?php bloginfo('name'); ?>">
 <meta property="fb:app_id" content="<?php the_field('options_facebook_app', 'option'); ?>">
