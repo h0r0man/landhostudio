@@ -123,7 +123,7 @@
 
               <?php if ($image && $galleryVideo): ?>
                 <div class="grid__item-video">
-                  <video preload="none" loop<?php if ($galleryVideoAutoplay): ?> autoplay<?php endif; ?><?php if (!$galleryVideoAudio): ?> muted<?php endif; ?> poster="<?php echo $thumbLargeSingle[0]; ?>">
+                  <video preload="auto" loop<?php if ($galleryVideoAutoplay): ?> autoplay<?php endif; ?><?php if (!$galleryVideoAudio): ?> muted<?php endif; ?> poster="<?php echo $thumbLargeSingle[0]; ?>">
                     <source src="<?php the_sub_field('work_gallery_video'); ?>" type="video/mp4">
                   </video>
                 </div>
