@@ -1,6 +1,6 @@
-<article class="error-404" itemscope itemtype="http://schema.org/CreativeWork">
+<article class="error-page error-404" itemscope itemtype="http://schema.org/CreativeWork">
 
-  <div class="error__content">
+  <div class="error-page__content">
 
     <?php if (get_field('options_404_title', option)): ?>
       <h2><?php the_field('options_404_title', option); ?></h2>
@@ -19,7 +19,7 @@
   ?>
 
   <?php if ($image): ?>
-    <div class="error__image">
+    <div class="error-page__image">
       <img src="<?php echo $thumbLarge ?>" alt="<?php echo $thumbLarge['alt'] ?>" />
     </div>
   <?php endif; ?>
