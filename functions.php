@@ -148,7 +148,15 @@
 					echo "summary_large_image";
 				}
 			}
-			
+
+      // SVG upload ------------------------------------------------------------
+
+      function svg_upload($mimes) {
+        $mimes['svg'] = 'image/svg+xml';
+        return $mimes;
+      }
+      add_filter('upload_mimes', 'svg_upload');
+
       // Shortcode for [newsletter] --------------------------------------------
       
       function newsletter_shortcode() {
