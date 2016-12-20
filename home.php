@@ -12,31 +12,36 @@
           <?php while (have_rows('options_carousel', option)) : the_row(); ?>
             
             <?php
-              $image = get_sub_field('options_carousel_image', option);
-              $size = 'large';
-              $thumbLarge = $image['sizes'][ $size ];
+              $image            = get_sub_field('options_carousel_image', option);
+              $size             = 'large';
+              $thumbLarge       = $image['sizes'][ $size ];
+              $thumbLargeSingle = wp_get_attachment_image_src($image, $size);
             ?>
             
             <article class="featured__slide<?php if (get_sub_field('options_carousel_video', option) && $image): ?> featured__slide--video<?php endif; ?>" itemscope itemtype="http://schema.org/CreativeWork">
 
-              <div class="featured__slide-content">
-                <?php if (get_sub_field('options_carousel_title', option) && get_sub_field('options_carousel_link', option)): ?>
-                  <h2 class="featured__slide-content__title">
-                    <a href="<?php the_sub_field('options_carousel_link', option); ?>"><?php the_sub_field('options_carousel_title', option); ?></a>
-                  </h2>
-                <?php elseif (get_sub_field('options_carousel_title', option)): ?>
-                  <h2 class="featured__slide-content__title"><?php the_sub_field('options_carousel_title', option); ?></h2>
-                <?php endif; ?>
-              </div>
+              <?php if (get_sub_field('options_carousel_title', option) && get_sub_field('options_carousel_link', option)): ?>
+
+                <div class="featured__slide-content">
+                  <?php if (get_sub_field('options_carousel_title', option) && get_sub_field('options_carousel_link', option)): ?>
+                    <h2 class="featured__slide-content__title">
+                      <a href="<?php the_sub_field('options_carousel_link', option); ?>"><?php the_sub_field('options_carousel_title', option); ?></a>
+                    </h2>
+                  <?php elseif (get_sub_field('options_carousel_title', option)): ?>
+                    <h2 class="featured__slide-content__title"><?php the_sub_field('options_carousel_title', option); ?></h2>
+                  <?php endif; ?>
+                </div>
+
+              <?php endif; ?>
             
               <?php if (get_sub_field('options_carousel_video', option) && $image): ?>
 
                 <div class="featured__slide-image">
-                  <img src="<?php echo $thumbLarge ?>" alt="<?php echo $thumbLarge['alt'] ?>" />
+                  <?php echo wp_get_attachment_image( $image, 'large', false, array() ); ?>
                 </div>
 
                 <div class="featured__slide-video">
-                  <video preload="none" loop muted<?php if ($image): ?> poster="<?php echo $thumbLarge; ?>"<?php endif; ?>>
+                  <video preload="none" loop muted<?php if ($image): ?> poster="<?php echo $thumbLargeSingle[0]; ?>"<?php endif; ?>>
                     <source src="<?php the_sub_field('options_carousel_video', option); ?>" type="video/mp4">
                   </video>
                 </div>
@@ -44,7 +49,7 @@
               <?php elseif ($image): ?>
 
                 <div class="featured__slide-image">
-                  <img src="<?php echo $thumbLarge; ?>" alt="<?php echo $thumbLarge['alt'] ?>" />
+                  <?php echo wp_get_attachment_image( $image, 'large', false, array() ); ?>
                 </div>
 
               <?php endif; ?>
