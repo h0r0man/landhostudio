@@ -2,14 +2,6 @@
 
 An official Land Ho WordPress theme
 
-## To-do’s
-
-– [x] levare payoff
-- [x] ingrandire header su desktop
-- [x] featured opacity quando fai hover compare title, su mobile verrà visualizzato sempre
-- [x] sitemap plugin
-- [ ] event lister per hover quando scrolli
-
 ## Installation
 
 1. Install [gulp](http://gulpjs.com)
