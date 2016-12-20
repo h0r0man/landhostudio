@@ -21,6 +21,9 @@ $(function() {
     initSingleContent();
     initTestimonials();
     initNewsletter();
+    if (Modernizr.touchevents) {
+      initHoverScroll();
+    }
   };
 
   function initHeader() {
@@ -216,7 +219,28 @@ $(function() {
     
     }
 
-  }
+  };
+
+  function initHoverScroll() {
+
+    var body = document.body,
+        timer;
+
+    window.addEventListener('scroll', function() {
+
+      clearTimeout(timer);
+
+      if( !body.classList.contains('hover--disable') ) {
+        body.classList.add('hover--disable');
+      }
+
+      timer = setTimeout( function() {
+        body.classList.remove('hover--disable');
+      }, 150);
+
+    }, false)
+
+  };
 
   init();
 
