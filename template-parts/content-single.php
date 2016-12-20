@@ -16,7 +16,7 @@
           </div>
           
           <div class="single__hero-image">
-            <img src="<?php echo $thumbLargeDefault[0]; ?>" alt="<?php echo $thumbLargeDefault['alt'] ?>" />
+            <?php the_post_thumbnail(); ?>
           </div>
           
           <div class="single__hero-iframe">
@@ -26,7 +26,7 @@
         <?php elseif ($thumbPost): ?>
         
           <div class="single__hero-image">
-            <img src="<?php echo $thumbLargeDefault[0]; ?>" alt="<?php echo $thumbLargeDefault['alt'] ?>" />
+            <?php the_post_thumbnail(); ?>
           </div>
 
         <?php endif; ?>
@@ -98,24 +98,17 @@
         
           <?php
             
-            $gallerySize = get_sub_field('work_gallery_size');
-            $galleryVideo = get_sub_field('work_gallery_video');
+            $gallerySize          = get_sub_field('work_gallery_size');
+            $galleryVideo         = get_sub_field('work_gallery_video');
             $galleryVideoAutoplay = get_sub_field('work_gallery_video_autoplay');
-            $galleryVideoAudio = get_sub_field('work_gallery_video_audio');
-            $galleryFrame = get_sub_field('work_gallery_frame');
+            $galleryVideoAudio    = get_sub_field('work_gallery_video_audio');
+            $galleryFrame         = get_sub_field('work_gallery_frame');
 
-            $image = get_sub_field('work_gallery_image');
-            $size = 'large';
-            $thumbLarge = $image['sizes'][ $size ];
-            
-            // without link
-            
-            // Case 1. content
-            // Case 2. image
-            // Case 3. video
-            
-            
-            
+            $image                = get_sub_field('work_gallery_image');
+            $size                 = 'large';
+            $thumbLarge           = $image['sizes'][ $size ];
+            $thumbLargeSingle     = wp_get_attachment_image_src($image, $size);
+
           ?>
 
           <div class="grid__item grid__item--single<?php if ($galleryFrame): ?> grid__item--frame<?php endif; ?><?php if($gallerySize == 'medium'): ?> grid__item--medium<?php elseif($gallerySize == 'large'): ?> grid__item--large<?php endif; ?><?php if ($image && $galleryVideo): ?> grid__item--video<?php if (!$galleryVideoAutoplay): ?> grid__item--play<?php endif; ?><?php elseif ($image): ?> grid__item--image<?php endif; ?><?php if ($galleryVideoAutoplay): ?> grid__item--autoplay<?php endif; ?>">
@@ -124,13 +117,13 @@
 
               <?php if ($image): ?>
                 <div class="grid__item-image">
-                  <img src="<?php echo $thumbLarge ?>" alt="<?php echo $image['alt'] ?>" />
+                  <?php echo wp_get_attachment_image( $image, 'large', false, array() ); ?>
                 </div>
               <?php endif; ?>
 
               <?php if ($image && $galleryVideo): ?>
                 <div class="grid__item-video">
-                  <video preload="none" loop<?php if ($galleryVideoAutoplay): ?> autoplay<?php endif; ?><?php if (!$galleryVideoAudio): ?> muted<?php endif; ?> poster="<?php echo $thumbLarge ?>">
+                  <video preload="none" loop<?php if ($galleryVideoAutoplay): ?> autoplay<?php endif; ?><?php if (!$galleryVideoAudio): ?> muted<?php endif; ?> poster="<?php echo $thumbLargeSingle[0]; ?>">
                     <source src="<?php the_sub_field('work_gallery_video'); ?>" type="video/mp4">
                   </video>
                 </div>

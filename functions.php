@@ -898,7 +898,7 @@
 						array (
 							'sub_fields' => array (
 								array (
-									'return_format' => 'array',
+									'return_format' => 'id',
 									'preview_size' => 'thumbnail',
 									'library' => 'all',
 									'min_width' => '',
