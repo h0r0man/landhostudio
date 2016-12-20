@@ -1,7 +1,9 @@
 <!-- Facebook -->
 <meta property="og:title" content="<?php wp_title('–', true, 'right'); ?><?php bloginfo('name'); ?>">
 <meta property="og:type" content="<?php og_type(); ?>">
+<?php if (!is_home()): ?>
 <meta property="og:image" content="<?php og_image(); ?>">
+<?php endif; ?>
 <meta property="og:description" content="<?php social_description(); ?>">
 <meta property="og:url" content="<?php og_url(); ?>">
 <meta property="og:site_name" content="<?php bloginfo('name'); ?>">
