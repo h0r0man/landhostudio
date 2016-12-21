@@ -4,8 +4,6 @@
  */
 get_header(); ?>
 
-<?php get_header(); ?>
-
 	<?php while (have_posts()): the_post(); ?>
 
 		<article class="page page--hello" itemscope itemtype="http://schema.org/CreativeWork">
