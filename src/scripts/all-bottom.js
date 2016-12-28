@@ -13,13 +13,19 @@ $(function() {
 
   var init = function() {
     initHeader();
-    initFeatured();
-    initGrid();
+    Pace.on('done', function() {
+      initFeatured();
+    });
+    Pace.on('done', function() {
+      initGrid();
+    });
     initGridVideo();
     initGridContent();
     initSingleHero();
     initSingleContent();
-    initTestimonials();
+    Pace.on('done', function() {
+      initTestimonials();
+    });
     initNewsletter();
     if (Modernizr.touchevents) {
       initHoverScroll();
