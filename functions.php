@@ -3,6 +3,10 @@
 	if (!function_exists('landhostudio_setup')) {
 		function landhostudio_setup() {
 
+      // Let WordPress scale image at 80%  -------------------------------------
+
+      add_filter('jpeg_quality', create_function('', 'return 80;' ));
+
 			// Let WordPress manage the document title -------------------------------
 			
       add_theme_support('title-tag');
