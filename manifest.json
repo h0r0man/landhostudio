@@ -1,0 +1,8 @@
+{
+  "name": "Land Ho",
+  "short_name": "Land Ho",
+  "lang": "en-GB",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#ffffff"
+}
