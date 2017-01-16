@@ -18,7 +18,8 @@
               $thumbLargeSingle = wp_get_attachment_image_src($image, $size);
             ?>
             
-            <article class="featured__slide<?php if (get_sub_field('options_carousel_video', option) && $image): ?> featured__slide--video<?php endif; ?>" itemscope itemtype="http://schema.org/CreativeWork">
+						<?php if ($image): ?>
+            	<article class="featured__slide<?php if (get_sub_field('options_carousel_video', option) && $image): ?> featured__slide--video<?php endif; ?>" itemscope itemtype="http://schema.org/CreativeWork">
 
               <?php if (get_sub_field('options_carousel_title', option) && get_sub_field('options_carousel_link', option)): ?>
 
@@ -55,6 +56,7 @@
               <?php endif; ?>
 
             </article>
+						<?php endif; ?>
 
           <?php endwhile; ?>
 
