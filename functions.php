@@ -120,7 +120,7 @@
       
       function newsletter_shortcode() {
         ob_start();
-        get_template_part('template-parts/newsletter');
+        get_template_part('inc/newsletter');
         return ob_get_clean();
       }
       add_shortcode('newsletter', 'newsletter_shortcode');

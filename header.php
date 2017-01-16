@@ -16,8 +16,8 @@
     <meta name="theme-color" content="#FFF">
     <meta name="google-site-verification" content="<?php the_field('options_google_verification', 'option'); ?>">
 
-    <?php get_template_part('template-parts/social'); ?>
-    <?php get_template_part('template-parts/icons'); ?>
+    <?php get_template_part('inc/meta'); ?>
+    <?php get_template_part('inc/icons'); ?>
   </head>
   <body>
 
