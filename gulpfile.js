@@ -28,7 +28,7 @@ var browserSync   = require('browser-sync').create(),
 
 // Url -------------------------------------------------------------------------
 
-var url           = 'http://landhostudio:8888/';
+var url           = 'http://landhostudio.dev/';
 
 // Paths -----------------------------------------------------------------------
 
@@ -121,7 +121,7 @@ gulp.task('fonts', function() {
 
 gulp.task('watch', function() {
   browserSync.init({
-    files: ['{template-pages,templates-parts}/**/*.php', '*.php'],
+    files: ['{inc,template-pages,templates-parts}/**/*.php', '*.php'],
     proxy: url,
     notify: false,
     port: 2016,
