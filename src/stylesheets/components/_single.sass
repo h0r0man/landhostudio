@@ -113,11 +113,11 @@
         padding-left: em-calc(16)
         padding-right: em-calc(16)
 
-      @include media(max-width $to-medium)
+      @include media(max-width $to-large)
         order: 1
         width: 50%
 
-      @include media($from-medium)
+      @include media($from-large)
         width: (100% / 3)
 
       h2
@@ -131,12 +131,12 @@
         padding-left: em-calc(16)
         padding-right: em-calc(16)
 
-      @include media(max-width $to-medium)
+      @include media(max-width $to-large)
         order: 3
         width: 100%
         margin-top: em-calc(16)
       
-      @include media($from-medium)
+      @include media($from-large)
         width: (100% / 3)
       
       p
@@ -165,11 +165,11 @@
         padding-left: em-calc(16)
         padding-right: em-calc(16)
 
-      @include media(max-width $to-medium)
+      @include media(max-width $to-large)
         order: 2
         width: (100% / 2)
 
-      @include media($from-medium)
+      @include media($from-large)
         width: (100% / 3)
 
       p
@@ -193,7 +193,7 @@
         flex-wrap: wrap
         width: 100%
 
-      @include media(max-width $to-medium)
+      @include media(max-width $to-large)
         order: 4
 
       .single__content--opened &
@@ -216,8 +216,8 @@
         @include media(max-width $to-small)
           width: 100%
 
-        @include media(max-width $to-medium)
+        @include media(max-width $to-large)
           width: (100% / 2)
 
-        @include media($from-medium)
+        @include media($from-large)
           width: (100% / 3)
