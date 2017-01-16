@@ -3,30 +3,39 @@
   <?php
     $thumbPost = has_post_thumbnail();
     $thumbLargeDefault = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), "large");
+    $imagePost = get_field('work_image_preview');
   ?>
-  
-  <?php if ($thumbPost || get_field('work_video_embed')): ?>
+
+  <?php if ($thumbPost || $imagePost): ?>
     <div class="single__hero">
       <div class="single__hero-container">
 
-        <?php if ($thumbPost && get_field('work_video_embed')): ?>
+        <?php if (($thumbPost && get_field('work_video_embed')) || ($imagePost && get_field('work_video_embed'))): ?>
 
           <div class="single__hero-play">
             <button><?php esc_html_e('Play', 'horoman'); ?></button>
           </div>
           
           <div class="single__hero-image">
-            <?php the_post_thumbnail(); ?>
+            <?php if ($thumbPost): ?>
+              <?php the_post_thumbnail(); ?>
+            <?php elseif ($imagePost): ?>
+              <?php echo wp_get_attachment_image( $imagePost, 'large', false, array() ); ?>
+            <?php endif; ?>
           </div>
           
           <div class="single__hero-iframe">
             <?php the_field('work_video_embed'); ?>
           </div>
 
-        <?php elseif ($thumbPost): ?>
+        <?php elseif ($thumbPost || $imagePost): ?>
         
           <div class="single__hero-image">
-            <?php the_post_thumbnail(); ?>
+            <?php if ($thumbPost): ?>
+              <?php the_post_thumbnail(); ?>
+            <?php elseif ($imagePost): ?>
+              <?php echo wp_get_attachment_image( $imagePost, 'large', false, array() ); ?>
+            <?php endif; ?>
           </div>
 
         <?php endif; ?>
