@@ -1,4 +1,4 @@
-.grid
+.grid-2
   opacity: 0
   transition: opacity 250ms, transform 1s
   transition-delay: 250ms
@@ -8,6 +8,10 @@
 
   .single &
     transition-delay: 500ms
+
+  @include media($from-small)
+    width: #{100% - ($gutter * 2)}
+    margin: auto
 
   .pace-done &
     opacity: 1
@@ -29,12 +33,12 @@
   // Isotope calculation -------------------------------------------------------
   
   &__sizer
-    .grid--two &
-      width: $grid-half-width
-    .grid--three &
-      width: $grid-small-width
+    .grid-2--two &
+      width: $grid-2-half-width
+    .grid-2--three &
+      width: $grid-2-small-width
   &__gutter
-    width: $grid-gutter
+    width: $grid-2-gutter
   
   // Single item ---------------------------------------------------------------
   
@@ -42,7 +46,7 @@
     float: left
     width: 100%
     padding-bottom: per-width(16,9)
-    margin-bottom: ($grid-gutter * 2)
+    margin-bottom: ($grid-2-gutter * 2)
     text-align: center
     overflow: hidden
   
@@ -51,7 +55,7 @@
     z-index: 0
 
     @include media($from-small)
-      margin-bottom: ($grid-gutter - 0.1%)
+      margin-bottom: ($grid-2-gutter - 0.1%)
 
     &:last-of-type
       margin-bottom: 0
@@ -65,31 +69,31 @@
 
     &--small
       @include media($from-small)
-        width: $grid-small-width
-        padding-bottom: $grid-small-height
+        width: $grid-2-small-width
+        padding-bottom: $grid-2-small-height
 
     &--medium
 
-      .grid--two &
+      .grid-2--two &
         @include media($from-small)
-          width: $grid-half-width
-          padding-bottom: $grid-half-height
+          width: $grid-2-half-width
+          padding-bottom: $grid-2-half-height
 
-      .grid--three &
+      .grid-2--three &
         @include media($from-small)
-          width: $grid-medium-width
-          padding-bottom: $grid-medium-height
+          width: $grid-2-medium-width
+          padding-bottom: $grid-2-medium-height
 
     &--large
 
-      .grid--two &
+      .grid-2--two &
         width: 100%
         padding-bottom: per-width(16,9)
 
-      .grid--three &
+      .grid-2--three &
         @include media($from-small)
-          width: $grid-large-width
-          padding-bottom: $grid-large-height
+          width: $grid-2-large-width
+          padding-bottom: $grid-2-large-height
 
     // Interns -----------------------------------------------------------------
 
@@ -104,11 +108,9 @@
       height: 100%
 
     &-link
-      transform: scale(1.005)
-
       &--enabled
         @include media($from-small)
-          .grid__item-image
+          .grid-2__item-image
             backface-visibility: hidden
             perspective: 1000
             transform: scale(1)
@@ -116,10 +118,10 @@
 
         &:hover
           @include media($from-small)
-            .grid__item-image
+            .grid-2__item-image
               transform: scale(1.05)
 
-          .grid__item-content
+          .grid-2__item-content
             @include media(max-width $to-small)
               opacity: 1
               visibility: visible
@@ -171,26 +173,26 @@
 
     &--video
 
-      .grid__item-link
+      .grid-2__item-link
         &:hover
           @include media($from-small)
-            .grid__item-image
+            .grid-2__item-image
               opacity: 0
 
-      .grid__item-image
+      .grid-2__item-image
         @include media($from-small)
           opacity: 1
 
     &--autoplay
 
-      .grid__item-image
+      .grid-2__item-image
         @include media($from-small)
           opacity: 0
 
     &--single
       @include media($from-small)
-        &.grid__item--play
+        &.grid-2__item--play
           &:hover
             cursor: pointer
-          .grid__item-image
+          .grid-2__item-image
             transition: 250ms

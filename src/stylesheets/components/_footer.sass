@@ -1,15 +1,7 @@
 .footer
   margin-top: em-calc(32)
+  margin-bottom: em-calc(32)
   font-size: em-calc(14)
-
-  .no-scroll &
-    position: fixed
-    bottom: em-calc(7)
-    z-index: 99
-    color: $color-1
-    
-    a
-      color: $color-1
 
   @include media(max-width $to-small)
     padding-left: em-calc(16)
@@ -17,7 +9,17 @@
 
   @include media($from-small)
     width: #{100% - ($gutter * 2)}
-    margin: em-calc(48) auto 0
+    margin: em-calc(48) auto
+
+  .no-scroll &
+    position: fixed
+    bottom: em-calc(7)
+    z-index: 99
+    color: $color-1
+    margin: 0
+    
+    a
+      color: $color-1
 
   a
     border-bottom: rem-calc(1) solid transparent

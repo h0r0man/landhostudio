@@ -12,7 +12,6 @@
         <div class="grid__items">
 
           <div class="grid__sizer"></div>
-          <div class="grid__gutter"></div>
 
     			<?php while (have_posts()): the_post(); ?>
     				<?php get_template_part('template-parts/content', 'preview'); ?>

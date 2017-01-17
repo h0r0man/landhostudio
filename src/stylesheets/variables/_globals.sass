@@ -35,9 +35,9 @@ $to-4k: $from-4k - em-calc(1)
 
 $gutter: 12.5%
 
-// Grid ------------------------------------------------------------------------
+// Grid 1 ----------------------------------------------------------------------
 
-$grid-gutter:        2%
+$grid-gutter:        0
 $grid-gap:           $grid-gutter / 3
 $grid-column:        (100% / 3)
 $grid-ratio:         (9 / 16) * 100%
@@ -52,3 +52,21 @@ $grid-medium-width:  $grid-small-width
 $grid-half-width:    (($grid-column * 3) / 2) - $grid-gap
 $grid-half-width:    ($grid-column * 1.5) - ($grid-gutter / 2)
 $grid-large-width:   ($grid-column * 2) - $grid-gap
+
+// Grid 2 ----------------------------------------------------------------------
+
+$grid-2-gutter:        2%
+$grid-2-gap:           $grid-2-gutter / 3
+$grid-2-column:        (100% / 3)
+$grid-2-ratio:         (9 / 16) * 100%
+
+$grid-2-large-height:  (($grid-2-ratio / 3) + ($grid-2-gap * 2)) * 2
+$grid-2-small-height:  ($grid-2-large-height / 2) - ($grid-2-gap * 1.333333)
+$grid-2-medium-height: $grid-2-large-height
+$grid-2-half-height:   ($grid-2-ratio / 2) - $grid-2-gap
+
+$grid-2-small-width:   $grid-2-column - ($grid-2-gap * 2)
+$grid-2-medium-width:  $grid-2-small-width
+$grid-2-half-width:    (($grid-2-column * 3) / 2) - $grid-2-gap
+$grid-2-half-width:    ($grid-2-column * 1.5) - ($grid-2-gutter / 2)
+$grid-2-large-width:   ($grid-2-column * 2) - $grid-2-gap

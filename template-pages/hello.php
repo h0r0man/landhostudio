@@ -51,6 +51,8 @@ get_header(); ?>
 				</section>
 
 			<?php endif; ?>
+
+			<span class="header__breakpoint"></span>
 			
       <?php if(have_rows('page_columns')): ?>
 

@@ -13,11 +13,13 @@ $(function() {
 
   var init = function() {
     initHeader();
+    initHeaderScroll();
     Pace.on('done', function() {
       initFeatured();
     });
     Pace.on('done', function() {
       initGrid();
+      initGrid2();
     });
     initGridVideo();
     initGridContent();
@@ -50,6 +52,40 @@ $(function() {
     $('.categories-page-container a').click(function () {
       $('.header').removeClass('header--work header--menu');
     });
+
+  };
+
+  function initHeaderScroll() {
+
+    if ($('.header__breakpoint').length) {
+
+      function headerScroll() {
+
+        var screenPosition = $(document).scrollTop(),
+            elementTarget  = $('.header__breakpoint').offset().top,
+            headerHeight   = $('.header').outerHeight();
+
+        if (screenPosition > (elementTarget - headerHeight)) {
+          $('.header').addClass('header--alternative');
+        } else {
+          $('.header').removeClass('header--alternative');
+        }
+      }
+
+      $(document).ready(function() {
+        $(window).scroll(function(){
+          headerScroll();
+        });
+
+        $(window).resize(function () {
+          headerScroll();
+        });
+
+        //call the scroll() event so that the proper one is highlighted at the start
+        $(window).scroll();
+      });
+
+    };
 
   };
 
@@ -105,7 +141,6 @@ $(function() {
     var $grid = $('.grid__items').masonry({
       containerStyle: null,
       columnWidth: '.grid__sizer',
-      gutter: '.grid__gutter',
       itemSelector: '.grid__item',
       percentPosition: true,
       initLayout: false
@@ -116,6 +151,25 @@ $(function() {
     });
     
     $grid.masonry();
+
+  }
+  
+  function initGrid2() {
+
+    var $grid2 = $('.grid-2__items').masonry({
+      containerStyle: null,
+      columnWidth: '.grid-2__sizer',
+      gutter: '.grid-2__gutter',
+      itemSelector: '.grid-2__item',
+      percentPosition: true,
+      initLayout: false
+    });
+
+    $grid2.on('layoutComplete', function(event, items) {
+      $(this).addClass('grid-2__items--loaded');
+    });
+    
+    $grid2.masonry();
 
   }
 

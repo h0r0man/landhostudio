@@ -44,6 +44,8 @@
     </div>
   <?php endif; ?>
 
+  <span class="header__breakpoint"></span>
+
   <div class="single__content">
 
     <div class="single__content-header">
@@ -96,12 +98,12 @@
   </div>
 
   <?php if(have_rows('work_gallery')): ?>
-    <div class="grid grid--two">
+    <div class="grid-2 grid-2--two">
 
-      <div class="grid__items">
+      <div class="grid-2__items">
 
-        <div class="grid__sizer"></div>
-        <div class="grid__gutter"></div>
+        <div class="grid-2__sizer"></div>
+        <div class="grid-2__gutter"></div>
 
         <?php while (have_rows('work_gallery')) : the_row(); ?>
         
@@ -120,18 +122,18 @@
 
           ?>
 
-          <div class="grid__item grid__item--single<?php if ($galleryFrame): ?> grid__item--frame<?php endif; ?><?php if($gallerySize == 'medium'): ?> grid__item--medium<?php elseif($gallerySize == 'large'): ?> grid__item--large<?php endif; ?><?php if ($image && $galleryVideo): ?> grid__item--video<?php if (!$galleryVideoAutoplay): ?> grid__item--play<?php endif; ?><?php elseif ($image): ?> grid__item--image<?php endif; ?><?php if ($galleryVideoAutoplay): ?> grid__item--autoplay<?php endif; ?>">
+          <div class="grid-2__item grid-2__item--single<?php if ($galleryFrame): ?> grid-2__item--frame<?php endif; ?><?php if($gallerySize == 'medium'): ?> grid-2__item--medium<?php elseif($gallerySize == 'large'): ?> grid-2__item--large<?php endif; ?><?php if ($image && $galleryVideo): ?> grid-2__item--video<?php if (!$galleryVideoAutoplay): ?> grid-2__item--play<?php endif; ?><?php elseif ($image): ?> grid-2__item--image<?php endif; ?><?php if ($galleryVideoAutoplay): ?> grid-2__item--autoplay<?php endif; ?>">
 
-            <div class="grid__item-link">
+            <div class="grid-2__item-link">
 
               <?php if ($image): ?>
-                <div class="grid__item-image">
+                <div class="grid-2__item-image">
                   <?php echo wp_get_attachment_image( $image, 'large', false, array() ); ?>
                 </div>
               <?php endif; ?>
 
               <?php if ($image && $galleryVideo): ?>
-                <div class="grid__item-video">
+                <div class="grid-2__item-video">
                   <video preload="auto" loop<?php if ($galleryVideoAutoplay): ?> autoplay<?php endif; ?><?php if (!$galleryVideoAudio): ?> muted<?php endif; ?> poster="<?php echo $thumbLargeSingle[0]; ?>">
                     <source src="<?php the_sub_field('work_gallery_video'); ?>" type="video/mp4">
                   </video>

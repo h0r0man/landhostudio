@@ -9,9 +9,9 @@ body
   width: 100%
   height: em-calc(63)
   padding: em-calc(20) 0 em-calc(20)
-  background-color: $color-1
   z-index: 97
-  // box-shadow: 0 0 8px 0 rgba($color-2, 0.25)
+  color: $color-1
+  transition: background 150ms ease-in
 
   @include media($from-small)
     height: em-calc(80)
@@ -21,18 +21,6 @@ body
     right: 0
     max-width: rem-calc(3000)
     margin: 0 auto
-
-  &.header--menu
-    @include media(max-width $to-small)
-      *
-        color: $color-1
-
-  ~ *
-    margin-top: em-calc(63)
-    @include media($from-small)
-      margin-top: em-calc(80)
-    .error-404 &
-      margin-top: 0
 
   // globals
   
@@ -44,8 +32,23 @@ body
     display: inline-block
     border-bottom: rem-calc(1) solid
     transition: border 150ms
+    color: $color-1
+
     &:hover
       border-color: transparent
+
+  svg
+    fill: $color-1
+
+  &--alternative
+    color: $color-2
+    background-color: $color-1
+    
+    a, button
+      color: $color-2
+    
+    svg
+      fill: $color-2
 
   &__item
     position: absolute
@@ -123,6 +126,9 @@ body
       a
         border: 0
 
+      .header--work &
+        opacity: 0
+
     &--hello
       display: none
 
@@ -175,7 +181,6 @@ body
       left: $gutter
       width: (100% - ($gutter * 2))
       padding: em-calc(30) 0
-      background-color: $color-1
       z-index: 98
       
       visibility: hidden
@@ -255,6 +260,12 @@ body
 
         @include media(max-width $to-small)
           border-width: rem-calc(2)
+
+  &__breakpoint
+    display: block
+    width: 100%
+    height: 1px
+    margin-top: -1px
 
   .error-404 &
     display: none
