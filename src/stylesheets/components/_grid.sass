@@ -150,6 +150,9 @@
       z-index: 1
       @include media(max-width $to-small)
         display: none
+      video
+        @include media(max-width $to-small)
+          display: none !important
 
     // Media kind --------------------------------------------------------------
 
@@ -178,8 +181,9 @@
               opacity: 0
 
       .grid__item-image
+        opacity: 1
         @include media($from-small)
-          opacity: 1
+          opacity: 0
 
     &--autoplay
 

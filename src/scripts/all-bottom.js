@@ -21,7 +21,7 @@ $(function() {
       initGrid();
       initGrid2();
     });
-    initGridVideo();
+    initGrid2Video();
     initGridContent();
     initSingleHero();
     initSingleContent();
@@ -173,9 +173,9 @@ $(function() {
 
   }
 
-  function initGridVideo() {
+  function initGrid2Video() {
 
-    $('.grid__item--play').hover(playVideo, stopVideo);
+    $('.grid-2__item--play').hover(playVideo, stopVideo);
     
     function playVideo() {
       $('video', this).get(0).currentTime = 0;

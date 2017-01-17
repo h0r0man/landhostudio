@@ -35,7 +35,7 @@ $thumbLargeDefault = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID
       <?php endif; ?>
 
       <div class="grid__item-video" itemprop="video">
-        <video preload="auto" loop muted<?php if ($image || $thumbPost): ?> poster="<?php if ($image): ?><?php echo $thumbLargeSingle[0]; ?><?php elseif ($thumbPost): ?><?php echo $thumbLargeDefault[0]; ?><?php endif; ?>"<?php endif; ?>>
+        <video preload="auto" loop autoplay muted<?php if ($image || $thumbPost): ?> poster="<?php if ($image): ?><?php echo $thumbLargeSingle[0]; ?><?php elseif ($thumbPost): ?><?php echo $thumbLargeDefault[0]; ?><?php endif; ?>"<?php endif; ?>>
           <source src="<?php the_field('work_video_preview'); ?>" type="video/mp4">
         </video>
       </div>
