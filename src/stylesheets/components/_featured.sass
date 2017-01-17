@@ -1,11 +1,6 @@
 .featured
-  margin-bottom: ($grid-gutter * 2)
   opacity: 0
   transition: opacity 250ms
-
-  @include media($from-small)
-    width: #{100% - ($gutter * 2)}
-    margin: 0 auto ($grid-gutter * 0.75)
   
   .pace-done &
     opacity: 1
@@ -19,10 +14,6 @@
 
     @include media($from-small)
       padding-bottom: per-width(16,9)
-
-      &:hover
-        .featured__slide-content
-          opacity: 1
 
     // &.flickity-enabled
     //   opacity: 1
@@ -84,25 +75,10 @@
 
       @include media($from-small)
         padding: em-calc(32)
-        opacity: 0
-        transition: opacity 250ms
 
-      *
-        color: $color-1
+      &__title
+        @extend .hidden
         width: 100%
-      
-      h2
-        font-size: em-calc(32)
-
-        @include media($from-small)
-          font-size: em-calc(48)
-      
-      a
-        padding-bottom: em-calc(1)
-        border-bottom: rem-calc(2) solid
-
-        @include media($from-small)
-          border-width: rem-calc(3)
 
     &-image
       z-index: 2

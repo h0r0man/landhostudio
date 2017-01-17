@@ -21,40 +21,35 @@
 						<?php if ($image): ?>
             	<article class="featured__slide<?php if (get_sub_field('options_carousel_video', option) && $image): ?> featured__slide--video<?php endif; ?>" itemscope itemtype="http://schema.org/CreativeWork">
 
-              <?php if (get_sub_field('options_carousel_title', option) && get_sub_field('options_carousel_link', option)): ?>
+								<?php if (get_sub_field('options_carousel_link', option)): ?>
+									<a href="<?php the_sub_field('options_carousel_link', option); ?>">
+								<?php endif; ?>
 
-                <div class="featured__slide-content">
-                  <?php if (get_sub_field('options_carousel_title', option) && get_sub_field('options_carousel_link', option)): ?>
-                    <h2 class="featured__slide-content__title">
-                      <a href="<?php the_sub_field('options_carousel_link', option); ?>"><?php the_sub_field('options_carousel_title', option); ?></a>
-                    </h2>
-                  <?php elseif (get_sub_field('options_carousel_title', option)): ?>
-                    <h2 class="featured__slide-content__title"><?php the_sub_field('options_carousel_title', option); ?></h2>
-                  <?php endif; ?>
-                </div>
+		              <?php if (get_sub_field('options_carousel_title', option)): ?>
+		                <div class="featured__slide-content">
+		                  <h2 class="featured__slide-content__title"><?php the_sub_field('options_carousel_title', option); ?></h2>
+		                </div>
+		              <?php endif; ?>
+		            
+		              <?php if (get_sub_field('options_carousel_video', option) && $image): ?>
+		                <div class="featured__slide-image">
+		                  <?php echo wp_get_attachment_image( $image, 'large', false, array() ); ?>
+		                </div>
 
-              <?php endif; ?>
-            
-              <?php if (get_sub_field('options_carousel_video', option) && $image): ?>
+		                <div class="featured__slide-video">
+		                  <video preload="auto" loop muted<?php if ($image): ?> poster="<?php echo $thumbLargeSingle[0]; ?>"<?php endif; ?>>
+		                    <source src="<?php the_sub_field('options_carousel_video', option); ?>" type="video/mp4">
+		                  </video>
+		                </div>
+		              <?php elseif ($image): ?>
+		                <div class="featured__slide-image">
+		                  <?php echo wp_get_attachment_image( $image, 'large', false, array() ); ?>
+		                </div>
+		              <?php endif; ?>
 
-                <div class="featured__slide-image">
-                  <?php echo wp_get_attachment_image( $image, 'large', false, array() ); ?>
-                </div>
-
-                <div class="featured__slide-video">
-                  <video preload="auto" loop muted<?php if ($image): ?> poster="<?php echo $thumbLargeSingle[0]; ?>"<?php endif; ?>>
-                    <source src="<?php the_sub_field('options_carousel_video', option); ?>" type="video/mp4">
-                  </video>
-                </div>
-
-              <?php elseif ($image): ?>
-
-                <div class="featured__slide-image">
-                  <?php echo wp_get_attachment_image( $image, 'large', false, array() ); ?>
-                </div>
-
-              <?php endif; ?>
-
+								<?php if (get_sub_field('options_carousel_link', option)): ?>
+									</a>
+								<?php endif; ?>
             </article>
 						<?php endif; ?>
 
