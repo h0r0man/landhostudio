@@ -66,7 +66,7 @@
 			
 			function init_assets() {
 				wp_enqueue_style( $handle, $src, $deps, $ver, $media );
-        wp_enqueue_style('all-css', get_template_directory_uri() . '/dist/css/all.css', true, '2.2', false);
+        wp_enqueue_style('all-css', get_template_directory_uri() . '/dist/css/all.css', true, '2.3', false);
 
         wp_register_script('all-top-js', get_template_directory_uri() . '/dist/js/all-top.js', array(), '2.2', false);
         wp_enqueue_script('all-top-js');
