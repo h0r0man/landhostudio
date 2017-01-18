@@ -22,7 +22,7 @@
             	<article class="featured__slide<?php if (get_sub_field('options_carousel_video', option) && $image): ?> featured__slide--video<?php endif; ?>" itemscope itemtype="http://schema.org/CreativeWork">
 
 								<?php if (get_sub_field('options_carousel_link', option)): ?>
-									<a href="<?php the_sub_field('options_carousel_link', option); ?>">
+									<a href="<?php the_sub_field('options_carousel_link', option); ?>" class="featured__link">
 								<?php endif; ?>
 
 		              <?php if (get_sub_field('options_carousel_title', option)): ?>
