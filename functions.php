@@ -30,6 +30,10 @@
     		'gallery',
     		'caption',
     	));
+			
+			// Editor styles ---------------------------------------------------------
+
+			add_editor_style(array('dist/css/editor.css'));
 
       // Function to change "posts" to "work" in the admin side menu -----------
 
