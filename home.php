@@ -5,7 +5,7 @@
     <?php if (have_rows('options_carousel', option)): ?>
       <section class="featured">
 
-        <h2 class="hidden"><?php esc_html_e('Featured', 'horoman'); ?></h2>
+        <h2 class="hidden"><?php esc_html_e('Featured', 'landhostudio'); ?></h2>
         
         <div class="featured__slides">
 
@@ -62,7 +62,7 @@
 
     <section class="grid grid--three">
 
-      <h2 class="hidden"><?php esc_html_e('Work', 'horoman'); ?></h2>
+      <h2 class="hidden"><?php esc_html_e('Work', 'landhostudio'); ?></h2>
         
       <?php if (have_posts()): ?>
 

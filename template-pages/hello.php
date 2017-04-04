@@ -14,7 +14,7 @@ get_header(); ?>
 
 				<section class="testimonials">
 
-					<h3 class="hidden"><?php _e('Testimonials', 'horoman'); ?></h3>
+					<h3 class="hidden"><?php _e('Testimonials', 'landhostudio'); ?></h3>
 
           <div class="testimonials__slides">
 

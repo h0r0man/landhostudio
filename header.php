@@ -19,21 +19,21 @@
     <?php get_template_part('inc/meta'); ?>
     <?php get_template_part('inc/icons'); ?>
   </head>
-  <body>
+  <body itemscope itemtype="http://schema.org/WebPage">
 
-    <header class="header">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       
       <div class="header__item header__item--work">
         <button>
-          <span class="state-1"><?php esc_html_e('Work', 'horoman'); ?></span>
-          <span class="state-2"><?php esc_html_e('Close', 'horoman'); ?></span>
+          <span class="state-1"><?php esc_html_e('Work', 'landhostudio'); ?></span>
+          <span class="state-2"><?php esc_html_e('Close', 'landhostudio'); ?></span>
         </button>
       </div>
       
       <div class="header__item header__item--head">
 
         <div class="header__item--head-logo">
-          <h1>
+          <h1 itemprop="headline">
             <a rel="home" href="<?php echo esc_url(home_url('/')); ?>">
               <span class="hidden"><?php bloginfo('name'); ?></span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125 18">
@@ -75,20 +75,20 @@
       <?php endif; ?>
       
       <div class="header__item header__item--menu">
-        <button>
-          <span class="state-1"><?php esc_html_e('Menu', 'horoman'); ?></span>
-          <span class="state-2"><?php esc_html_e('Close', 'horoman'); ?></span>
+        <button aria-label="<?php esc_html_e('Menu', 'landhostudio'); ?>">
+          <span class="state-1"><?php esc_html_e('Menu', 'landhostudio'); ?></span>
+          <span class="state-2"><?php esc_html_e('Close', 'landhostudio'); ?></span>
         </button>
       </div>
       
       <nav class="header__menus" itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <h2 class="hidden"><?php esc_html_e('Menu', 'horoman'); ?></h2>
+        <h2 class="hidden"><?php esc_html_e('Menu', 'landhostudio'); ?></h2>
 
         <?php if (get_categories()): ?>
           <div class="categories-page-container">
             <ul id="menu-categories" class="menu">
               <li class="cat-item cat-item-0<?php if (is_home()): ?> current-cat<?php endif; ?>">
-                <a rel="home" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('All work', 'horoman'); ?></a>
+                <a rel="home" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('All work', 'landhostudio'); ?></a>
               </li>
               <?php
                 $args = array(

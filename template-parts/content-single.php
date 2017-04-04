@@ -13,7 +13,7 @@
         <?php if (($thumbPost && get_field('work_video_embed')) || ($imagePost && get_field('work_video_embed'))): ?>
 
           <div class="single__hero-play">
-            <button><?php esc_html_e('Play', 'horoman'); ?></button>
+            <button><?php esc_html_e('Play', 'landhostudio'); ?></button>
           </div>
           
           <div class="single__hero-image">
@@ -74,7 +74,7 @@
       <?php if (get_field('work_pages')): ?>
         <p><?php the_field('work_pages'); ?></p>
       <?php else: ?>
-        <p><?php esc_html_e('See you next time', 'horoman'); ?></p>
+        <p><?php esc_html_e('See you next time', 'landhostudio'); ?></p>
       <?php endif; ?>
 
     </div>

@@ -6,7 +6,7 @@
       <h2><?php the_field('options_404_title', option); ?></h2>
     <?php endif; ?>
 
-    <p><a rel="home" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Homepage', 'horoman'); ?></a></p>
+    <p><a rel="home" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Homepage', 'landhostudio'); ?></a></p>
 
   </div>
 
