@@ -69,14 +69,10 @@
 			// Load the assets -------------------------------------------------------
 			
 			function init_assets() {
-        wp_enqueue_style('all-css', get_template_directory_uri() . '/dist/css/all.css', true, '2.3', false);
-
-        wp_register_script('all-top-js', get_template_directory_uri() . '/dist/js/all-top.js', array(), '2.2', false);
-        wp_enqueue_script('all-top-js');
-        
-        wp_register_script('all-bottom-js', get_template_directory_uri() . '/dist/js/all-bottom.js', array(), '2.2', true);
-        wp_enqueue_script('all-bottom-js');
-
+				wp_enqueue_style('css', get_template_directory_uri() . '/dist/css/all.css', array(), '1.0.0');
+        wp_enqueue_script('plugins', get_template_directory_uri() . '/dist/js/plugins.js', array('jquery'), '1.0.0', true);
+        wp_enqueue_script('scripts-top', get_template_directory_uri() . '/dist/js/scripts-top.js', array(), '1.0.0', false);
+				wp_enqueue_script('scripts-bottom', get_template_directory_uri() . '/dist/js/scripts-bottom.js', array('jquery'), '1.0.0', true);
 			}
 			add_action('wp_enqueue_scripts', 'init_assets');
 

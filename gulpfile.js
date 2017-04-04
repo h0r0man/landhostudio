@@ -72,6 +72,14 @@ gulp.task('js', function() {
     .pipe(browserSync.stream());
 });
 
+gulp.task('js', function() {
+  return gulp.src([source + '/scripts/{plugins,scripts-top,scripts-bottom}.js'])
+    .pipe(include())
+    .pipe(uglify())
+    .pipe(gulp.dest(destination + '/js'))
+    .pipe(browserSync.stream());
+});
+
 // Icons -----------------------------------------------------------------------
 
 gulp.task('icons', function() {
