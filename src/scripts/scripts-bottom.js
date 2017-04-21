@@ -84,7 +84,7 @@
 
     var $carousel = $('.featured__slides').flickity({
       contain: false,
-      autoPlay: 4000,
+      autoPlay: 8000,
       pauseAutoPlayOnHover: false,
       percentPosition: true,
       prevNextButtons: false,
